@@ -124,7 +124,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
       <div className="mb-8">
         <div className="flex items-baseline gap-2">
-          <span className="text-4xl md:text-5xl font-semibold tracking-tight">
+          <span className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
             {plan.price}
           </span>
           {plan.priceSuffix && (
