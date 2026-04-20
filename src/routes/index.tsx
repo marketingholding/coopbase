@@ -318,7 +318,7 @@ function Index() {
             <span className="h-px flex-1 bg-border" />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-            Projetos de Transformação e Eficiência Operacional
+            Projetos de transformação e eficiência operacional
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             Consultorias de alto impacto para destravar gargalos. A adoção de
