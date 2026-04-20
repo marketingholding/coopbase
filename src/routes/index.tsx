@@ -219,42 +219,23 @@ function Index() {
         </div>
       </section>
 
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 md:pt-32 pb-16 md:pb-24">
-        <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6 font-medium">
-            Aceleração digital para cooperativas
-          </p>
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-8">
-            Tecnologia de ponta com{" "}
-            <span className="text-primary">comunicação autêntica</span>.
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos
-            associados e reduza custos operacionais, a COOPBASE apresenta planos de
-            aceleração digital e otimização de processos — desenhados exclusivamente
-            para a realidade do modelo cooperativista.
-          </p>
-        </div>
-      </section>
-
       {/* Section 1 — Recurring */}
-      <section id="planos" className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="max-w-3xl mb-12 md:mb-16">
-          <div className="flex items-center gap-4 mb-6">
+      <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
+        <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
+          <div className="flex items-center gap-4 mb-5 sm:mb-6">
             <span className="text-sm font-semibold text-primary">01</span>
             <span className="h-px flex-1 bg-border" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
             Planos de Aceleração Contínua
           </h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             Contratos de 12 meses com soluções focadas em construir autoridade
             digital, atrair cooperados e gerar negócios recorrentes.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {recurringPlans.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />
           ))}
@@ -262,16 +243,16 @@ function Index() {
       </section>
 
       {/* Section 2 — Projects */}
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div className="max-w-3xl mb-12 md:mb-16">
-          <div className="flex items-center gap-4 mb-6">
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
+        <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
+          <div className="flex items-center gap-4 mb-5 sm:mb-6">
             <span className="text-sm font-semibold text-primary">02</span>
             <span className="h-px flex-1 bg-border" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
             Projetos de Transformação e Eficiência Operacional
           </h2>
-          <p className="text-base text-muted-foreground leading-relaxed">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             Consultorias de alto impacto para destravar gargalos. A adoção de
             ferramentas inteligentes e fluxos automatizados atua como motor de
             crescimento, competitividade e redução de custos reais para as
@@ -279,7 +260,7 @@ function Index() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {projects.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />
           ))}
@@ -287,18 +268,18 @@ function Index() {
       </section>
 
       {/* CTA */}
-      <section className="max-w-6xl mx-auto px-6 py-20 md:py-32">
-        <div className="border-t border-border pt-16 md:pt-20 max-w-3xl">
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-6">
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-32">
+        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
             Pronto para acelerar sua cooperativa?
           </h2>
-          <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
             Converse com nosso time e descubra qual plano é o ideal para o
             momento da sua cooperativa.
           </p>
           <a
             href="mailto:contato@coopbase.com.br"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
           >
             Falar com a COOPBASE
           </a>
@@ -307,9 +288,9 @@ function Index() {
 
       {/* Footer */}
       <footer className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">COOPBASE @ 2026</p>
-          <img src={logo} alt="COOPBASE" className="h-6 w-auto opacity-60" />
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-6 sm:py-8 flex items-center justify-between gap-4">
+          <p className="text-xs sm:text-sm text-muted-foreground">COOPBASE @ 2026</p>
+          <img src={logo} alt="COOPBASE" className="h-5 sm:h-6 w-auto opacity-60" />
         </div>
       </footer>
     </div>
