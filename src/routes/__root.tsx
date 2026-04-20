@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "COOPBASE" },
+      { name: "description", content: "Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos associados e reduza custos operacionais, a COOPBASE apresenta planos de aceleração digital" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "COOPBASE" },
+      { property: "og:description", content: "Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos associados e reduza custos operacionais, a COOPBASE apresenta planos de aceleração digital" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "COOPBASE" },
+      { name: "twitter:description", content: "Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos associados e reduza custos operacionais, a COOPBASE apresenta planos de aceleração digital" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/tez2CV6ZbnZtqe7pZYl32vJy5rD3/social-images/social-1776724525226-Frame_8.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/tez2CV6ZbnZtqe7pZYl32vJy5rD3/social-images/social-1776724525226-Frame_8.webp" },
     ],
     links: [
       {
