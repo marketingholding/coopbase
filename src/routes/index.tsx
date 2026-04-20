@@ -227,7 +227,7 @@ function Index() {
             <span className="h-px flex-1 bg-border" />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-            Planos de Aceleração Contínua
+            Planos de aceleração contínua
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             Contratos de 12 meses com soluções focadas em construir autoridade
@@ -239,6 +239,74 @@ function Index() {
           {recurringPlans.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />
           ))}
+        </div>
+
+        {/* Comparison table */}
+        <div className="mt-16 sm:mt-20 md:mt-24">
+          <div className="max-w-3xl mb-8 sm:mb-10">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+              Compare os planos
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              Veja em um relance o que está incluso em cada plano recorrente.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto -mx-5 sm:mx-0 px-5 sm:px-0">
+            <table className="w-full min-w-[640px] border-collapse text-left">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="py-4 sm:py-5 pr-4 text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                    Recursos
+                  </th>
+                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                    <div className="text-sm sm:text-base font-semibold">Essencial</div>
+                    <div className="text-xs text-muted-foreground mt-1">R$ 5.000/mês</div>
+                  </th>
+                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center bg-primary/5 border-x border-primary/20">
+                    <div className="text-sm sm:text-base font-semibold text-primary">Tração</div>
+                    <div className="text-xs text-muted-foreground mt-1">R$ 10.000/mês</div>
+                  </th>
+                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                    <div className="text-sm sm:text-base font-semibold">Performance</div>
+                    <div className="text-xs text-muted-foreground mt-1">R$ 12.000/mês</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-sm">
+                {[
+                  { feature: "Postagens estratégicas mensais", values: ["12", "12", "12"] },
+                  { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
+                  { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
+                  { feature: "Gestão de CRM de vendas", values: [false, true, true] },
+                  { feature: "Kick-off de processos (1º mês)", values: [false, "2 sessões", "2 sessões"] },
+                  { feature: "Acompanhamento contínuo de processos", values: [false, false, "6 sessões em 3 meses"] },
+                  { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-border last:border-0">
+                    <td className="py-4 pr-4 text-foreground/90">{row.feature}</td>
+                    {row.values.map((val, j) => (
+                      <td
+                        key={j}
+                        className={
+                          "py-4 px-3 sm:px-4 text-center " +
+                          (j === 1 ? "bg-primary/5 border-x border-primary/20" : "")
+                        }
+                      >
+                        {val === true ? (
+                          <Check className="h-4 w-4 text-primary inline-block" strokeWidth={2.5} />
+                        ) : val === false ? (
+                          <span className="text-muted-foreground/40">—</span>
+                        ) : (
+                          <span className="text-foreground/80">{val}</span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
