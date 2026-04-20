@@ -109,33 +109,33 @@ function PlanCard({ plan }: { plan: Plan }) {
   return (
     <div
       className={
-        "flex flex-col h-full rounded-lg border p-6 sm:p-8 md:p-10 transition-colors " +
+        "flex flex-col h-full rounded-lg border p-5 sm:p-6 lg:p-8 xl:p-10 transition-colors " +
         (plan.highlight
           ? "bg-primary text-primary-foreground border-primary"
           : "bg-card text-card-foreground border-border hover:border-primary/40")
       }
     >
-      <div className="mb-6">
+      <div className="mb-5 sm:mb-6">
         <p
           className={
-            "text-xs uppercase tracking-[0.2em] mb-3 " +
+            "text-[11px] sm:text-xs uppercase tracking-[0.2em] mb-2 sm:mb-3 " +
             (plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground")
           }
         >
           Plano
         </p>
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold">{plan.name}</h3>
+        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold">{plan.name}</h3>
       </div>
 
-      <div className="mb-8">
-        <div className="flex items-baseline gap-2">
-          <span className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+      <div className="mb-6 sm:mb-8">
+        <div className="flex items-baseline gap-2 flex-wrap">
+          <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight">
             {plan.price}
           </span>
           {plan.priceSuffix && (
             <span
               className={
-                "text-sm " +
+                "text-xs sm:text-sm " +
                 (plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground")
               }
             >
@@ -256,7 +256,7 @@ function Index() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
           {recurringPlans.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />
           ))}
@@ -371,7 +371,7 @@ function Index() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
           {projects.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />
           ))}
