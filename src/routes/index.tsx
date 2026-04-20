@@ -119,7 +119,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         >
           Plano
         </p>
-        <h3 className="text-2xl md:text-3xl font-semibold">{plan.name}</h3>
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold">{plan.name}</h3>
       </div>
 
       <div className="mb-8">
