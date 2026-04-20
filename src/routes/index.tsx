@@ -3,6 +3,9 @@ import { Check } from "lucide-react";
 import logo from "@/assets/coopbase-logo.svg";
 import logoWhite from "@/assets/coopbase-logo-white.svg";
 
+const WHATSAPP_URL =
+  "https://wa.me/5582999744041?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20da%20COOPBASE.";
+
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -212,12 +215,28 @@ function Index() {
             Tecnologia de ponta com{" "}
             <span className="text-primary">comunicação autêntica</span>.
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-10">
             Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos
             associados e reduza custos operacionais, a COOPBASE apresenta planos de
             aceleração digital e otimização de processos — desenhados exclusivamente
             para a realidade do modelo cooperativista.
           </p>
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+            >
+              Falar com a COOPBASE
+            </a>
+            <a
+              href="#planos"
+              className="inline-flex items-center justify-center border border-border px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
+            >
+              Ver planos
+            </a>
+          </div>
         </div>
       </section>
 
@@ -313,6 +332,27 @@ function Index() {
         </div>
       </section>
 
+      {/* CTA after comparison */}
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-24">
+        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+            Pronto para acelerar sua cooperativa?
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
+            Converse com nosso time pelo WhatsApp e descubra qual plano é o
+            ideal para o momento da sua cooperativa.
+          </p>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+          >
+            Falar com a COOPBASE
+          </a>
+        </div>
+      </section>
+
       {/* Section 2 — Projects */}
       <section className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
@@ -349,7 +389,9 @@ function Index() {
             momento da sua cooperativa.
           </p>
           <a
-            href="mailto:contato@coopbase.com.br"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
           >
             Falar com a COOPBASE
