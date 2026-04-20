@@ -41,8 +41,8 @@ const recurringPlans: Plan[] = [
     objective:
       "Profissionalizar a presença digital da cooperativa e criar uma vitrine atrativa para a comunidade.",
     features: [
-      "Gestão de Mídias Sociais — planejamento, criação e publicação de 12 postagens estratégicas por mês.",
-      "Cobertura Audiovisual In Loco — 5 horas mensais de captação profissional externa (vídeos e fotos) para registrar a força da sua cooperativa em ação.",
+      "Gestão de mídias sociais — planejamento, criação e publicação de 12 postagens estratégicas por mês.",
+      "Cobertura audiovisual in loco — 5 horas mensais de captação profissional externa (vídeos e fotos) para registrar a força da sua cooperativa em ação.",
     ],
   },
   {
@@ -51,11 +51,11 @@ const recurringPlans: Plan[] = [
     priceSuffix: "/ mês",
     objective:
       "Transformar a presença digital em uma máquina de aquisição de novos cooperados e oportunidades comerciais.",
-    inherits: "Tudo do Plano Essencial, mais:",
+    inherits: "Tudo do plano Essencial, mais:",
     features: [
-      "Gestão de Mídia Paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
-      "Gestão de CRM de Vendas — estruturação do funil de relacionamento e vendas para a equipe comercial.",
-      "Kick-off de Processos — 2 sessões exclusivas de consultoria no primeiro mês para alinhar marketing e atendimento.",
+      "Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
+      "Gestão de CRM de vendas — estruturação do funil de relacionamento e vendas para a equipe comercial.",
+      "Kick-off de processos — 2 sessões exclusivas de consultoria no primeiro mês para alinhar marketing e atendimento.",
     ],
     highlight: true,
   },
@@ -65,9 +65,9 @@ const recurringPlans: Plan[] = [
     priceSuffix: "/ mês",
     objective:
       "Máximo alinhamento entre o volume de interessados gerados pelo marketing e a capacidade de atendimento da equipe.",
-    inherits: "Tudo do Plano Tração, mais:",
+    inherits: "Tudo do plano Tração, mais:",
     features: [
-      "Acompanhamento Contínuo de Processos — consultoria estendida por 3 meses (2 sessões mensais, 6 encontros) para garantir conversão eficiente das oportunidades.",
+      "Acompanhamento contínuo de processos — consultoria estendida por 3 meses (2 sessões mensais, 6 encontros) para garantir conversão eficiente das oportunidades.",
     ],
   },
 ];
@@ -80,9 +80,9 @@ const projects: Plan[] = [
     objective:
       "Identificar e eliminar as falhas de processos que impedem a sua cooperativa de escalar e atender mais associados com a mesma estrutura.",
     features: [
-      "Mapeamento e Diagnóstico — análise completa dos processos atuais e identificação de gargalos.",
-      "Plano de Resolução — criação de novos fluxos de trabalho visando agilidade e redução de custos.",
-      "Implementação Assistida — 3 meses de acompanhamento lado a lado com a equipe, incluindo 6 visitas técnicas estruturadas.",
+      "Mapeamento e diagnóstico — análise completa dos processos atuais e identificação de gargalos.",
+      "Plano de resolução — criação de novos fluxos de trabalho visando agilidade e redução de custos.",
+      "Implementação assistida — 3 meses de acompanhamento lado a lado com a equipe, incluindo 6 visitas técnicas estruturadas.",
     ],
   },
   {
@@ -93,7 +93,7 @@ const projects: Plan[] = [
       "Levar a cooperativa para a vanguarda tecnológica. 77% dos tomadores de decisão já consideram que a IA agiliza drasticamente os processos internos.",
     inherits: "Tudo da Solução A, mais:",
     features: [
-      "Imersão Profunda — 3 meses de acompanhamento intensivo, dobrando o suporte para 12 visitas técnicas.",
+      "Imersão profunda — 3 meses de acompanhamento intensivo, dobrando o suporte para 12 visitas técnicas.",
       "Implantação de IA — configuração de tecnologias de Inteligência Artificial sob medida (automação de atendimento, qualificação de associados, fluxos de dados), reduzindo trabalho manual e elevando a experiência do cooperado.",
     ],
     highlight: true,
