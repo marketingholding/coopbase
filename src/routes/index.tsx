@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import logo from "@/assets/coopbase-logo.svg";
+import logoWhite from "@/assets/coopbase-logo-white.svg";
 
 export const Route = createFileRoute("/")({
   component: Index,
