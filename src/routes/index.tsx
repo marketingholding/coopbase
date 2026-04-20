@@ -188,17 +188,36 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="border-b border-border">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-          <img src={logo} alt="COOPBASE" className="h-10 md:h-12 w-auto" />
+      <header className="bg-primary">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-5 sm:py-6 flex items-center justify-between">
+          <img src={logoWhite} alt="COOPBASE" className="h-8 sm:h-10 md:h-12 w-auto" />
           <a
             href="#planos"
-            className="hidden md:inline-flex text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="inline-flex text-xs sm:text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors"
           >
             Ver planos
           </a>
         </div>
       </header>
+
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-14 sm:pt-20 md:pt-32 pb-12 sm:pb-16 md:pb-24">
+        <div className="max-w-3xl">
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-5 sm:mb-6 font-medium">
+            Aceleração digital para cooperativas
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 sm:mb-8">
+            Tecnologia de ponta com{" "}
+            <span className="text-primary">comunicação autêntica</span>.
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos
+            associados e reduza custos operacionais, a COOPBASE apresenta planos de
+            aceleração digital e otimização de processos — desenhados exclusivamente
+            para a realidade do modelo cooperativista.
+          </p>
+        </div>
+      </section>
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 pt-20 md:pt-32 pb-16 md:pb-24">
