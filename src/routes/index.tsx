@@ -104,7 +104,7 @@ function PlanCard({ plan }: { plan: Plan }) {
   return (
     <div
       className={
-        "flex flex-col h-full rounded-lg border p-8 md:p-10 transition-colors " +
+        "flex flex-col h-full rounded-lg border p-6 sm:p-8 md:p-10 transition-colors " +
         (plan.highlight
           ? "bg-primary text-primary-foreground border-primary"
           : "bg-card text-card-foreground border-border hover:border-primary/40")
