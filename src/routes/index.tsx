@@ -55,6 +55,7 @@ const recurringPlans: Plan[] = [
     features: [
       "Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Gestão de CRM de vendas — estruturação do funil de relacionamento e vendas para a equipe comercial.",
+      "Desenvolvimento de 1 landing page — página de conversão sob medida para campanhas e captação de leads.",
       "Kick-off de processos — 2 sessões exclusivas de consultoria no primeiro mês para alinhar marketing e atendimento.",
     ],
     highlight: true,
@@ -67,6 +68,7 @@ const recurringPlans: Plan[] = [
       "Máximo alinhamento entre o volume de interessados gerados pelo marketing e a capacidade de atendimento da equipe.",
     inherits: "Tudo do plano Tração, mais:",
     features: [
+      "Desenvolvimento de 3 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
       "Acompanhamento contínuo de processos — consultoria estendida por 3 meses (2 sessões mensais, 6 encontros) para garantir conversão eficiente das oportunidades.",
     ],
   },
@@ -280,6 +282,7 @@ function Index() {
                   { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                   { feature: "Gestão de CRM de vendas", values: [false, true, true] },
                   { feature: "Kick-off de processos (1º mês)", values: [false, "2 sessões", "2 sessões"] },
+                  { feature: "Desenvolvimento de landing pages", values: [false, "1 página", "3 páginas"] },
                   { feature: "Acompanhamento contínuo de processos", values: [false, false, "6 sessões em 3 meses"] },
                   { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                 ].map((row, i) => (
