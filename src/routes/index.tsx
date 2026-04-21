@@ -299,9 +299,9 @@ function Index() {
                   { feature: "Postagens estratégicas mensais", values: ["12", "12", "12"] },
                   { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
                   { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
-                  { feature: "Gestão de CRM de vendas", values: [false, true, true] },
-                  { feature: "Acompanhamento de processos (1º mês)", values: [false, "2 sessões", "2 sessões"] },
-                  { feature: "Desenvolvimento de landing pages", values: [false, "5 páginas", "3 páginas"] },
+                  { feature: "Estruturação de CRM", values: [false, true, true] },
+                  { feature: "Acompanhamento de processos (1º mês)", values: [false, "1 sessão", "1 sessão"] },
+                  { feature: "Desenvolvimento de landing pages", values: [false, "3 páginas", "3 páginas"] },
                   { feature: "Acompanhamento contínuo de processos técnicos", values: [false, false, "6 sessões em 3 meses"] },
                   { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                 ].map((row, i) => (
