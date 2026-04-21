@@ -302,8 +302,8 @@ function Index() {
                   { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
                   { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                   { feature: "Estruturação de CRM", values: [false, true, true] },
+                  { feature: "Acompanhamento de processos (1º mês)", values: [false, "1 sessão", false] },
                   { feature: "Desenvolvimento de landing pages", values: [false, "Até 5 páginas", "Até 10 páginas"] },
-                  { feature: "Consultoria de processos (1º mês)", values: [false, "1 sessão", true] },
                   { feature: "Acompanhamento contínuo de processos técnicos", values: [false, false, "6 sessões em 3 meses"] },
                   { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                 ].map((row, i) => (
