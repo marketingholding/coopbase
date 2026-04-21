@@ -50,7 +50,7 @@ const recurringPlans: Plan[] = [
   },
   {
     name: "Tração",
-    price: "R$ 10.000",
+    price: "R$ 8.000",
     priceSuffix: "/ mês",
     objective:
       "Transformar a presença digital em uma máquina de aquisição de novos cooperados e oportunidades comerciais.",
@@ -286,7 +286,7 @@ function Index() {
                   </th>
                   <th className="py-4 sm:py-5 px-3 sm:px-4 text-center bg-primary/5 border-x border-primary/20">
                     <div className="text-sm sm:text-base font-semibold text-primary">Tração</div>
-                    <div className="text-xs text-muted-foreground mt-1">R$ 10.000/mês</div>
+                    <div className="text-xs text-muted-foreground mt-1">R$ 8.000/mês</div>
                   </th>
                   <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
                     <div className="text-sm sm:text-base font-semibold">Performance</div>
