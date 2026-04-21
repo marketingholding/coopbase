@@ -82,19 +82,19 @@ const recurringPlans: Plan[] = [
 const projects: Plan[] = [
   {
     name: "Reestruturação Operacional",
-    price: "R$ 20.000",
+    price: "R$ 15.000",
     priceSuffix: "projeto fechado",
     objective:
       "Identificar e eliminar as falhas nos processos técnicos de trabalho que impedem a sua cooperativa de escalar e operar com mais eficiência usando a mesma estrutura.",
     features: [
-      "Mapeamento e diagnóstico — análise completa dos processos técnicos e fluxos de trabalho atuais, com identificação de gargalos operacionais.",
+      "Mapeamento e diagnóstico — análise completa dos processos técnicos e fluxos de trabalho atuais, with identificação de gargalos operacionais.",
       "Plano de resolução — redesenho de fluxos de trabalho e procedimentos internos visando agilidade, padronização e redução de custos.",
       "Implementação assistida — 3 meses de acompanhamento lado a lado com a equipe técnica, incluindo 6 visitas estruturadas para validar a execução dos novos processos.",
     ],
   },
   {
     name: "Inovação & Inteligência Artificial",
-    price: "R$ 30.000",
+    price: "R$ 20.000",
     priceSuffix: "projeto fechado",
     objective:
       "Levar a cooperativa para a vanguarda tecnológica. 77% dos tomadores de decisão já consideram que a IA agiliza drasticamente os processos internos.",
