@@ -39,7 +39,7 @@ type Plan = {
 const recurringPlans: Plan[] = [
   {
     name: "Essencial",
-    price: "R$ 5.000",
+    price: "R$ 4.000",
     priceSuffix: "/ mês",
     objective:
       "Profissionalizar a presença digital da cooperativa e criar uma vitrine atrativa para a comunidade.",
@@ -59,7 +59,7 @@ const recurringPlans: Plan[] = [
       "*Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Estruturação de CRM — estruturação do funil de relacionamento e vendas para a equipe comercial.",
       "Desenvolvimento de até 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
-      "Acompanhamento de processos — 1 sessão de consultoria no primeiro mês para mapear e estruturar fluxos de trabalhos internos.",
+      "Consultoria de processos — 1 sessão no primeiro mês para mapear e estruturar fluxos de trabalhos internos.",
     ],
     highlight: true,
   },
@@ -72,7 +72,7 @@ const recurringPlans: Plan[] = [
     inherits: "Tudo do plano Tração, mais:",
     features: [
       "Desenvolvimento de 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
-      "Acompanhamento contínuo de processos técnicos — consultoria estendida por 3 meses (2 sessões mensais, 6 encontros) para otimizar fluxos de trabalho e garantir execução eficiente das operações.",
+      "Consultoria e acompanhamento contínuo de processos técnicos — 3 meses (2 sessões mensais, 6 encontros) para otimizar fluxos de trabalho e garantir execução eficiente das operações.",
     ],
   },
 ];
@@ -282,7 +282,7 @@ function Index() {
                   </th>
                   <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
                     <div className="text-sm sm:text-base font-semibold">Essencial</div>
-                    <div className="text-xs text-muted-foreground mt-1">R$ 5.000/mês</div>
+                    <div className="text-xs text-muted-foreground mt-1">R$ 4.000/mês</div>
                   </th>
                   <th className="py-4 sm:py-5 px-3 sm:px-4 text-center bg-primary/5 border-x border-primary/20">
                     <div className="text-sm sm:text-base font-semibold text-primary">Tração</div>
