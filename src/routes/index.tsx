@@ -58,8 +58,8 @@ const recurringPlans: Plan[] = [
     features: [
       "Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Gestão de CRM de vendas — estruturação do funil de relacionamento e vendas para a equipe comercial.",
-      "Desenvolvimento de 1 landing page — página de conversão sob medida para campanhas e captação de leads.",
-      "Kick-off de processos técnicos — 2 sessões exclusivas de consultoria no primeiro mês para mapear e estruturar fluxos de trabalho internos.",
+      "Desenvolvimento de 5 landing pages — páginas de conversão sob medida para campanhas e captação de leads.",
+      "Acompanhamento de processos — 2 sessões exclusivas de consultoria no primeiro mês para mapear e estruturar fluxos de trabalho internos.",
     ],
     highlight: true,
   },
