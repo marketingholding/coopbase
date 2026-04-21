@@ -1,26 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, AlertTriangle, TrendingDown, Sparkles, BarChart3, Gift, Shield, Video, Target } from "lucide-react";
 import logo from "@/assets/coopbase-logo.svg";
 import logoWhite from "@/assets/coopbase-logo-white.svg";
 
 const WHATSAPP_URL =
   "https://wa.me/5582999744041?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20da%20COOPBASE.";
 
+const DIAGNOSTICO_URL =
+  "https://wa.me/5582999744041?text=Ol%C3%A1%2C%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito%20da%20COOPBASE.";
+
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "COOPBASE — Planos de Aceleração Digital para Cooperativas" },
+      { title: "COOPBASE — Aceleração de Crescimento para Cooperativas" },
       {
         name: "description",
         content:
-          "Planos de aceleração digital e otimização de processos desenhados exclusivamente para a realidade do modelo cooperativista.",
+          "Atraia mais cooperados, reduza custos operacionais e transforme sua cooperativa em uma máquina de crescimento previsível com o Método CoopScale™.",
       },
-      { property: "og:title", content: "COOPBASE — Planos para Cooperativas" },
+      { property: "og:title", content: "COOPBASE — Aceleração para Cooperativas" },
       {
         property: "og:description",
         content:
-          "Comunicação autêntica e tecnologia de ponta para sua cooperativa crescer, atrair associados e reduzir custos.",
+          "Estratégia, tecnologia e execução para cooperativas crescerem, atraírem cooperados e reduzirem custos.",
       },
     ],
   }),
@@ -34,6 +37,8 @@ type Plan = {
   features: string[];
   inherits?: string;
   highlight?: boolean;
+  badge?: string;
+  cta?: string;
 };
 
 const recurringPlans: Plan[] = [
@@ -42,68 +47,45 @@ const recurringPlans: Plan[] = [
     price: "R$ 4.000",
     priceSuffix: "/ mês",
     objective:
-      "Profissionalizar a presença digital da cooperativa e criar uma vitrine atrativa para a comunidade.",
+      "Para cooperativas que precisam criar presença digital e começar a se posicionar.",
     features: [
-      "Gestão de mídias sociais — planejamento, criação e publicação de 12 postagens estratégicas por mês.",
-      "Cobertura audiovisual in loco — 5 horas mensais de captação profissional externa (vídeos e fotos) para registrar a força da sua cooperativa em ação.",
+      "Presença digital ativa e consistente",
+      "Conteúdo estratégico que posiciona sua cooperativa",
+      "Comunicação profissional com o público",
     ],
+    cta: "Ideal para sair da estagnação e começar a crescer",
   },
   {
     name: "Tração",
     price: "R$ 8.000",
     priceSuffix: "/ mês",
     objective:
-      "Transformar a presença digital em uma máquina de aquisição de novos cooperados e oportunidades comerciais.",
-    inherits: "Tudo do plano Essencial, mais:",
+      "Para cooperativas que querem atrair novos cooperados continuamente.",
+    inherits: "Tudo do Essencial, mais:",
     features: [
-      "Gestão de mídias sociais ampliada — 14 postagens estratégicas por mês.",
-      "*Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
-      "Estruturação de CRM — estruturação do funil de relacionamento e vendas para a equipe comercial.",
-      "Desenvolvimento de até 5 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
-      "Consultoria de processos — no primeiro mês para mapear e estruturar fluxos de trabalhos internos.",
+      "Geração de novos cooperados com tráfego pago",
+      "Estratégias de aquisição previsível",
+      "Estruturação de funil de crescimento",
+      "Landing pages focadas em conversão",
     ],
     highlight: true,
+    badge: "Mais escolhido",
+    cta: "Ideal para crescimento acelerado",
   },
   {
     name: "Performance",
     price: "R$ 12.000",
     priceSuffix: "/ mês",
     objective:
-      "Máximo alinhamento entre o volume de oportunidades geradas pelo marketing e a eficiência dos processos técnicos da equipe.",
-    inherits: "Tudo do plano Tração, mais:",
+      "Para cooperativas que querem escala e máxima eficiência.",
+    inherits: "Tudo do Tração, mais:",
     features: [
-      "Gestão de mídias sociais ampliada — 16 postagens estratégicas por mês.",
-      "Desenvolvimento de até 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
-      "Consultoria e acompanhamento contínuo de processos técnicos — 3 meses (2 sessões mensais, 6 encontros) para otimizar fluxos de trabalho e garantir execução eficiente das operações.",
+      "Otimização contínua de conversão",
+      "Estratégias avançadas de crescimento",
+      "Acompanhamento estratégico",
+      "Estrutura completa de escala",
     ],
-  },
-];
-
-const projects: Plan[] = [
-  {
-    name: "Reestruturação Operacional",
-    price: "R$ 15.000",
-    priceSuffix: "projeto fechado",
-    objective:
-      "Identificar e eliminar as falhas nos processos técnicos de trabalho que impedem a sua cooperativa de escalar e operar com mais eficiência usando a mesma estrutura.",
-    features: [
-      "Mapeamento e diagnóstico — análise completa dos processos técnicos e fluxos de trabalho atuais, with identificação de gargalos operacionais.",
-      "Plano de resolução — redesenho de fluxos de trabalho e procedimentos internos visando agilidade, padronização e redução de custos.",
-      "Implementação assistida — 3 meses de acompanhamento lado a lado com a equipe técnica, incluindo 6 visitas estruturadas para validar a execução dos novos processos.",
-    ],
-  },
-  {
-    name: "Inovação & Inteligência Artificial",
-    price: "R$ 20.000",
-    priceSuffix: "projeto fechado",
-    objective:
-      "Levar a cooperativa para a vanguarda tecnológica. 77% dos tomadores de decisão já consideram que a IA agiliza drasticamente os processos internos.",
-    inherits: "Tudo da Solução A, mais:",
-    features: [
-      "Imersão profunda — 3 meses de acompanhamento intensivo nos processos técnicos, dobrando o suporte para 12 visitas estruturadas.",
-      "Implantação de IA — configuração de tecnologias de Inteligência Artificial sob medida para automação de processos internos, fluxos de dados e tarefas operacionais repetitivas, reduzindo trabalho manual e elevando a produtividade da equipe.",
-    ],
-    highlight: true,
+    cta: "Ideal para cooperativas que querem liderança no mercado",
   },
 ];
 
@@ -111,12 +93,17 @@ function PlanCard({ plan }: { plan: Plan }) {
   return (
     <div
       className={
-        "flex flex-col h-full rounded-lg border p-5 sm:p-6 lg:p-8 xl:p-10 transition-colors " +
+        "flex flex-col h-full rounded-lg border p-5 sm:p-6 lg:p-8 xl:p-10 transition-colors relative " +
         (plan.highlight
           ? "bg-primary text-primary-foreground border-primary"
           : "bg-card text-card-foreground border-border hover:border-primary/40")
       }
     >
+      {plan.badge && (
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-foreground text-background text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+          ⭐ {plan.badge}
+        </span>
+      )}
       <div className="mb-5 sm:mb-6">
         <p
           className={
@@ -187,6 +174,19 @@ function PlanCard({ plan }: { plan: Plan }) {
           </li>
         ))}
       </ul>
+
+      {plan.cta && (
+        <p
+          className={
+            "mt-6 pt-6 border-t text-sm font-medium " +
+            (plan.highlight
+              ? "border-primary-foreground/20 text-primary-foreground"
+              : "border-border text-foreground")
+          }
+        >
+          👉 {plan.cta}
+        </p>
+      )}
     </div>
   );
 }
@@ -211,207 +211,433 @@ function Index() {
       <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-14 sm:pt-20 md:pt-32 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-3xl">
           <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-5 sm:mb-6 font-medium">
-            Aceleração digital para cooperativas
+            Aceleração de crescimento para cooperativas
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 sm:mb-8">
-            Tecnologia de ponta com{" "}
-            <span className="text-primary">comunicação autêntica</span>.
+            Atraia mais cooperados, reduza custos operacionais e transforme sua cooperativa em uma{" "}
+            <span className="text-primary">máquina de crescimento previsível</span>.
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-10">
-            Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos
-            associados e reduza custos operacionais, a COOPBASE apresenta planos de
-            aceleração digital e otimização de processos — desenhados exclusivamente
-            para a realidade do modelo cooperativista.
+            Enquanto outras cooperativas crescem e se modernizam, muitas ainda dependem de
+            indicação e processos lentos. Nós ajudamos você a mudar isso com estratégia,
+            tecnologia e execução.
           </p>
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <a
-              href={WHATSAPP_URL}
+              href={DIAGNOSTICO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
             >
-              Falar com a COOPBASE
+              Quero atrair mais cooperados
             </a>
             <a
-              href="#planos"
+              href={DIAGNOSTICO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center border border-border px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
             >
-              Ver planos
+              Agendar diagnóstico gratuito
             </a>
           </div>
         </div>
       </section>
 
-      {/* Section 1 — Recurring */}
+      {/* Pain Section */}
+      <section className="bg-muted/30 border-y border-border">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
+          <div className="max-w-3xl mb-10 sm:mb-12">
+            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+              <AlertTriangle className="h-5 w-5 text-primary" strokeWidth={2.5} />
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
+                Diagnóstico
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+              Sua cooperativa está enfrentando isso?
+            </h2>
+          </div>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-8">
+            {[
+              "Dificuldade para atrair novos cooperados",
+              "Baixo engajamento dos membros atuais",
+              "Dependência de indicação para crescer",
+              "Processos internos lentos e desorganizados",
+              "Falta de presença digital estruturada",
+            ].map((pain, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 bg-card border border-border rounded-lg p-4 sm:p-5"
+              >
+                <span className="text-primary text-lg leading-none mt-0.5">✗</span>
+                <span className="text-sm sm:text-base text-foreground/90">{pain}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p className="text-sm sm:text-base text-muted-foreground italic max-w-3xl">
+            👉 Se você se identificou com 2 ou mais pontos, sua cooperativa está perdendo
+            oportunidades todos os dias.
+          </p>
+        </div>
+      </section>
+
+      {/* Consequence */}
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <div className="flex items-center gap-3 mb-5 sm:mb-6">
+            <TrendingDown className="h-5 w-5 text-primary" strokeWidth={2.5} />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
+              Consequência
+            </span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
+            Se nada mudar, o cenário é esse:
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-4xl">
+          {[
+            "Crescimento abaixo do potencial",
+            "Perda de competitividade no mercado",
+            "Cooperados desengajados",
+            "Ineficiência operacional aumentando custos",
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-3 border-l-2 border-primary pl-4 py-2"
+            >
+              <span className="text-sm sm:text-base text-foreground/90">{item}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Solution — CoopScale */}
+      <section className="bg-primary text-primary-foreground">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-28">
+          <div className="max-w-3xl mb-10 sm:mb-12">
+            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+              <Sparkles className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary-foreground/80 font-medium">
+                A solução
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+              Conheça o Método CoopScale™
+            </h2>
+            <p className="text-base sm:text-lg text-primary-foreground/85 leading-relaxed">
+              Um sistema estruturado que combina marketing, tecnologia e processos para
+              transformar cooperativas em organizações modernas, eficientes e com crescimento
+              previsível.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <p className="text-xs sm:text-sm uppercase tracking-wider text-primary-foreground/70 font-medium mb-5">
+              Com ele você consegue:
+            </p>
+          </div>
+
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+            {[
+              "Atrair novos cooperados de forma constante",
+              "Aumentar o engajamento dos membros",
+              "Automatizar processos internos",
+              "Criar previsibilidade de crescimento",
+            ].map((item, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 border border-primary-foreground/20 rounded-lg p-4 sm:p-5"
+              >
+                <Check className="h-5 w-5 mt-0.5 shrink-0 text-primary-foreground" strokeWidth={2.5} />
+                <span className="text-sm sm:text-base text-primary-foreground/95">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Proof */}
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <div className="flex items-center gap-3 mb-5 sm:mb-6">
+            <BarChart3 className="h-5 w-5 text-primary" strokeWidth={2.5} />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
+              Resultados
+            </span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
+            Resultados que cooperativas podem alcançar
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {[
+            "Aumento na entrada de novos cooperados",
+            "Redução de custos operacionais",
+            "Melhoria na comunicação e engajamento",
+            "Estrutura digital profissional",
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-card border border-border rounded-lg p-5 sm:p-6 hover:border-primary/40 transition-colors"
+            >
+              <Check className="h-6 w-6 text-primary mb-4" strokeWidth={2.5} />
+              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">{item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Plans */}
       <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-4 mb-5 sm:mb-6">
-            <span className="text-sm font-semibold text-primary">01</span>
+            <span className="text-sm font-semibold text-primary">Planos de Aceleração</span>
             <span className="h-px flex-1 bg-border" />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-            Planos de aceleração contínua
+            Escolha o plano ideal para sua cooperativa
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Contratos de 12 meses com soluções focadas em construir autoridade
-            digital, atrair cooperados e gerar negócios recorrentes.
+            Soluções recorrentes desenhadas para o momento e ambição de cada cooperativa.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-2xl lg:max-w-none mx-auto pt-4">
           {recurringPlans.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />
           ))}
         </div>
+      </section>
 
-        {/* Comparison table */}
-        <div className="mt-16 sm:mt-20 md:mt-24">
-          <div className="max-w-3xl mb-8 sm:mb-10">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-3">
-              Compare os planos
-            </h3>
+      {/* Irresistible Offer */}
+      <section className="bg-muted/30 border-y border-border">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
+          <div className="max-w-3xl mb-10 sm:mb-12">
+            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+              <Gift className="h-5 w-5 text-primary" strokeWidth={2.5} />
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
+                Oferta gratuita
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+              Receba um diagnóstico gratuito da sua cooperativa
+            </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Veja em um relance o que está incluso em cada plano recorrente.
+              Nós vamos analisar:
             </p>
           </div>
 
-          <div className="overflow-x-auto -mx-5 sm:mx-0 px-5 sm:px-0">
-            <table className="w-full min-w-[640px] border-collapse text-left">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="py-4 sm:py-5 pr-4 text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                    Recursos
-                  </th>
-                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
-                    <div className="text-sm sm:text-base font-semibold">Essencial</div>
-                    <div className="text-xs text-muted-foreground mt-1">R$ 4.000/mês</div>
-                  </th>
-                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center bg-primary/5 border-x border-primary/20">
-                    <div className="text-sm sm:text-base font-semibold text-primary">Tração</div>
-                    <div className="text-xs text-muted-foreground mt-1">R$ 8.000/mês</div>
-                  </th>
-                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
-                    <div className="text-sm sm:text-base font-semibold">Performance</div>
-                    <div className="text-xs text-muted-foreground mt-1">R$ 12.000/mês</div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                {[
-                  { feature: "Postagens estratégicas mensais", values: ["12", "14", "16"] },
-                  { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
-                  { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
-                  { feature: "Estruturação de CRM", values: [false, true, true] },
-                  { feature: "Desenvolvimento de landing pages", values: [false, "Até 5 páginas", "Até 10 páginas"] },
-                  { feature: "Consultoria de processos (1º mês)", values: [false, "1 sessão", true] },
-                  { feature: "Acompanhamento contínuo de processos técnicos", values: [false, false, "6 sessões em 3 meses"] },
-                  { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
-                ].map((row, i) => (
-                  <tr key={i} className="border-b border-border last:border-0">
-                    <td className="py-4 pr-4 text-foreground/90">{row.feature}</td>
-                    {row.values.map((val, j) => (
-                      <td
-                        key={j}
-                        className={
-                          "py-4 px-3 sm:px-4 text-center " +
-                          (j === 1 ? "bg-primary/5 border-x border-primary/20" : "")
-                        }
-                      >
-                        {val === true ? (
-                          <Check className="h-4 w-4 text-primary inline-block" strokeWidth={2.5} />
-                        ) : val === false ? (
-                          <span className="text-muted-foreground/40">—</span>
-                        ) : (
-                          <span className="text-foreground/80">{val}</span>
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-10 max-w-4xl">
+            {[
+              "Como sua cooperativa está atraindo novos membros",
+              "Onde você está perdendo oportunidades",
+              "Quais são os gargalos de crescimento",
+              "O que pode ser feito para acelerar resultados",
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <Check className="h-5 w-5 mt-0.5 shrink-0 text-primary" strokeWidth={2.5} />
+                <span className="text-sm sm:text-base text-foreground/90">{item}</span>
+              </li>
+            ))}
+          </ul>
 
-      {/* CTA after comparison */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-24">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
-            Pronto para acelerar sua cooperativa?
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
-            Converse com nosso time pelo WhatsApp e descubra qual plano é o
-            ideal para o momento da sua cooperativa.
+          <p className="text-sm sm:text-base font-medium text-foreground mb-8">
+            👉 E você recebe um plano claro de ação
           </p>
+
           <a
-            href={WHATSAPP_URL}
+            href={DIAGNOSTICO_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
           >
-            Falar com a COOPBASE
+            Quero meu diagnóstico gratuito
           </a>
         </div>
       </section>
 
-      {/* Section 2 — Projects */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-          <div className="flex items-center gap-4 mb-5 sm:mb-6">
-            <span className="text-sm font-semibold text-primary">02</span>
-            <span className="h-px flex-1 bg-border" />
+      {/* Differential */}
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <div className="flex items-center gap-3 mb-5 sm:mb-6">
+            <Target className="h-5 w-5 text-primary" strokeWidth={2.5} />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
+              Diferencial
+            </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-            Projetos de transformação e eficiência operacional
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+            Não somos uma agência comum
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Consultorias de alto impacto para destravar gargalos nos processos
-            técnicos de trabalho. A adoção de ferramentas inteligentes e fluxos
-            automatizados atua como motor de crescimento, competitividade e
-            redução de custos reais para as operações da cooperativa.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
-          {projects.map((plan) => (
-            <PlanCard key={plan.name} plan={plan} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+          {[
+            "Trabalhamos exclusivamente com cooperativas",
+            "Entendemos os desafios reais do modelo cooperativista",
+            "Aplicamos estratégias específicas para esse mercado",
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-card border border-border rounded-lg p-5 sm:p-6"
+            >
+              <Check className="h-6 w-6 text-primary mb-4" strokeWidth={2.5} />
+              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">{item}</p>
+            </div>
           ))}
         </div>
+
+        <p className="mt-8 text-sm sm:text-base text-muted-foreground italic max-w-3xl">
+          👉 Você não precisa explicar seu negócio — nós já entendemos.
+        </p>
       </section>
 
-      {/* CTA */}
+      {/* Positioning */}
+      <section className="bg-foreground text-background">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
+          <div className="max-w-3xl">
+            <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-background/60 mb-5 sm:mb-6 font-medium">
+              Posicionamento
+            </p>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+              Especialistas em crescimento de cooperativas no Brasil
+            </h2>
+            <p className="text-base sm:text-lg text-background/80 leading-relaxed">
+              Ajudamos cooperativas a se modernizarem, crescerem e se tornarem referências no
+              seu setor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Disruptive Idea — Video Analysis */}
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
+        <div className="max-w-3xl mb-10 sm:mb-12">
+          <div className="flex items-center gap-3 mb-5 sm:mb-6">
+            <Video className="h-5 w-5 text-primary" strokeWidth={2.5} />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
+              Exclusivo
+            </span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+            Receba uma análise em vídeo da sua cooperativa
+          </h2>
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            Você envia suas informações e nós gravamos um vídeo personalizado mostrando:
+          </p>
+        </div>
+
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-10">
+          {[
+            "Os erros que estão travando seu crescimento",
+            "Oportunidades que você não está aproveitando",
+            "Como melhorar seus resultados rapidamente",
+          ].map((item, i) => (
+            <li
+              key={i}
+              className="bg-card border border-border rounded-lg p-5 sm:p-6"
+            >
+              <span className="text-2xl font-semibold text-primary block mb-3">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">{item}</p>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={DIAGNOSTICO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+        >
+          Solicitar análise personalizada
+        </a>
+      </section>
+
+      {/* Risk Reduction */}
+      <section className="bg-muted/30 border-y border-border">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
+          <div className="max-w-3xl mb-10 sm:mb-12">
+            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+              <Shield className="h-5 w-5 text-primary" strokeWidth={2.5} />
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
+                Sem riscos
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
+              Compromisso com resultado real
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+            {[
+              "Sem promessas genéricas",
+              "Estratégias aplicadas e testadas",
+              "Foco total em resultado real",
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 bg-card border border-border rounded-lg p-5"
+              >
+                <Check className="h-5 w-5 mt-0.5 shrink-0 text-primary" strokeWidth={2.5} />
+                <span className="text-sm sm:text-base text-foreground/90">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
       <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-32">
         <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
             Pronto para acelerar sua cooperativa?
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
-            Converse com nosso time e descubra qual plano é o ideal para o
-            momento da sua cooperativa.
+            Pare de depender do acaso para crescer. Comece a construir um sistema
+            previsível de crescimento.
           </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
-          >
-            Falar com a COOPBASE
-          </a>
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <a
+              href={DIAGNOSTICO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+            >
+              Quero meu diagnóstico gratuito
+            </a>
+            <a
+              href={DIAGNOSTICO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center border border-border px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
+            >
+              Quero atrair mais cooperados agora
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-6 sm:py-8 flex items-center justify-between gap-4">
-          <p className="text-xs sm:text-sm text-muted-foreground">COOPBASE @ 2026</p>
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-6 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <p className="text-xs sm:text-sm text-foreground font-medium">Coopbase © 2026</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Especialistas em aceleração de cooperativas
+            </p>
+          </div>
           <img src={logo} alt="COOPBASE" className="h-5 sm:h-6 w-auto opacity-60" />
         </div>
       </footer>
 
       {/* WhatsApp floating button */}
       <a
-        href="https://wa.me/5582999744041?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20planos%20da%20COOPBASE."
+        href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar com a COOPBASE no WhatsApp"
