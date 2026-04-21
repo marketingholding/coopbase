@@ -56,6 +56,7 @@ const recurringPlans: Plan[] = [
       "Transformar a presença digital em uma máquina de aquisição de novos cooperados e oportunidades comerciais.",
     inherits: "Tudo do plano Essencial, mais:",
     features: [
+      "Gestão de mídias sociais ampliada — 14 postagens estratégicas por mês.",
       "*Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Estruturação de CRM — estruturação do funil de relacionamento e vendas para a equipe comercial.",
       "Desenvolvimento de até 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
@@ -71,6 +72,7 @@ const recurringPlans: Plan[] = [
       "Máximo alinhamento entre o volume de oportunidades geradas pelo marketing e a eficiência dos processos técnicos da equipe.",
     inherits: "Tudo do plano Tração, mais:",
     features: [
+      "Gestão de mídias sociais ampliada — 16 postagens estratégicas por mês.",
       "Desenvolvimento de 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
       "Consultoria e acompanhamento contínuo de processos técnicos — 3 meses (2 sessões mensais, 6 encontros) para otimizar fluxos de trabalho e garantir execução eficiente das operações.",
     ],
@@ -296,7 +298,7 @@ function Index() {
               </thead>
               <tbody className="text-sm">
                 {[
-                  { feature: "Postagens estratégicas mensais", values: ["12", "12", "12"] },
+                  { feature: "Postagens estratégicas mensais", values: ["12", "14", "16"] },
                   { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
                   { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                   { feature: "Estruturação de CRM", values: [false, true, true] },
