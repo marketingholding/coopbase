@@ -1,5 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check, AlertTriangle, TrendingDown, Sparkles, BarChart3, Gift, Shield, Video, Target } from "lucide-react";
+import {
+  Check,
+  ArrowRight,
+  Sparkles,
+  TrendingUp,
+  Users,
+  Zap,
+  Shield,
+  Video,
+  PlayCircle,
+  Star,
+} from "lucide-react";
 import logo from "@/assets/coopbase-logo.svg";
 import logoWhite from "@/assets/coopbase-logo-white.svg";
 
@@ -59,8 +70,7 @@ const recurringPlans: Plan[] = [
     name: "Tração",
     price: "R$ 8.000",
     priceSuffix: "/ mês",
-    objective:
-      "Para cooperativas que querem atrair novos cooperados continuamente.",
+    objective: "Para cooperativas que querem atrair novos cooperados continuamente.",
     inherits: "Tudo do Essencial, mais:",
     features: [
       "Geração de novos cooperados com tráfego pago",
@@ -76,8 +86,7 @@ const recurringPlans: Plan[] = [
     name: "Performance",
     price: "R$ 12.000",
     priceSuffix: "/ mês",
-    objective:
-      "Para cooperativas que querem escala e máxima eficiência.",
+    objective: "Para cooperativas que querem escala e máxima eficiência.",
     inherits: "Tudo do Tração, mais:",
     features: [
       "Otimização contínua de conversão",
@@ -90,101 +99,106 @@ const recurringPlans: Plan[] = [
 ];
 
 function PlanCard({ plan }: { plan: Plan }) {
+  const isHighlight = plan.highlight;
   return (
     <div
       className={
-        "flex flex-col h-full rounded-lg border p-5 sm:p-6 lg:p-8 xl:p-10 transition-colors relative " +
-        (plan.highlight
-          ? "bg-primary text-primary-foreground border-primary"
-          : "bg-card text-card-foreground border-border hover:border-primary/40")
+        "group relative flex h-full flex-col rounded-2xl p-6 sm:p-8 transition-all duration-300 " +
+        (isHighlight
+          ? "bg-primary text-primary-foreground shadow-2xl shadow-primary/20 lg:-translate-y-4 lg:scale-[1.02]"
+          : "bg-card text-card-foreground border border-border hover:border-primary/40 hover:-translate-y-1")
       }
     >
       {plan.badge && (
-        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-foreground text-background text-[10px] sm:text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
-          ⭐ {plan.badge}
+        <span className="absolute -top-3 left-6 inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-background">
+          <Star className="h-3 w-3 fill-current" /> {plan.badge}
         </span>
       )}
-      <div className="mb-5 sm:mb-6">
+
+      <div className="mb-6">
+        <h3 className="mb-1 text-xl font-semibold">{plan.name}</h3>
         <p
           className={
-            "text-[11px] sm:text-xs uppercase tracking-[0.2em] mb-2 sm:mb-3 " +
-            (plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground")
+            "text-sm leading-relaxed " +
+            (isHighlight ? "text-primary-foreground/80" : "text-muted-foreground")
           }
         >
-          Plano
+          {plan.objective}
         </p>
-        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold">{plan.name}</h3>
       </div>
 
-      <div className="mb-6 sm:mb-8">
-        <div className="flex items-baseline gap-2 flex-wrap">
-          <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight">
-            {plan.price}
-          </span>
-          {plan.priceSuffix && (
-            <span
-              className={
-                "text-xs sm:text-sm " +
-                (plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground")
-              }
-            >
-              {plan.priceSuffix}
-            </span>
-          )}
-        </div>
-      </div>
-
-      <p
+      <div
         className={
-          "text-sm leading-relaxed mb-8 " +
-          (plan.highlight ? "text-primary-foreground/85" : "text-muted-foreground")
+          "mb-6 flex items-baseline gap-2 border-b pb-6 " +
+          (isHighlight ? "border-primary-foreground/20" : "border-border")
         }
       >
-        {plan.objective}
-      </p>
+        <span className="text-4xl font-semibold tracking-tight sm:text-5xl">{plan.price}</span>
+        {plan.priceSuffix && (
+          <span
+            className={
+              "text-sm " + (isHighlight ? "text-primary-foreground/70" : "text-muted-foreground")
+            }
+          >
+            {plan.priceSuffix}
+          </span>
+        )}
+      </div>
 
       {plan.inherits && (
         <p
           className={
-            "text-xs uppercase tracking-wider font-medium mb-4 " +
-            (plan.highlight ? "text-primary-foreground" : "text-foreground")
+            "mb-4 text-xs font-semibold uppercase tracking-wider " +
+            (isHighlight ? "text-primary-foreground" : "text-foreground")
           }
         >
           {plan.inherits}
         </p>
       )}
 
-      <ul className="space-y-4 flex-1">
+      <ul className="mb-6 flex-1 space-y-3">
         {plan.features.map((feature, i) => (
           <li key={i} className="flex gap-3 text-sm leading-relaxed">
-            <Check
-              className={
-                "h-4 w-4 mt-0.5 shrink-0 " +
-                (plan.highlight ? "text-primary-foreground" : "text-primary")
-              }
-              strokeWidth={2.5}
-            />
             <span
               className={
-                plan.highlight ? "text-primary-foreground/90" : "text-foreground/80"
+                "mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full " +
+                (isHighlight
+                  ? "bg-primary-foreground/15 text-primary-foreground"
+                  : "bg-primary/10 text-primary")
               }
             >
+              <Check className="h-3 w-3" strokeWidth={3} />
+            </span>
+            <span className={isHighlight ? "text-primary-foreground/95" : "text-foreground/85"}>
               {feature}
             </span>
           </li>
         ))}
       </ul>
 
+      <a
+        href={DIAGNOSTICO_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={
+          "group/btn inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-medium transition-all " +
+          (isHighlight
+            ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+            : "border border-border bg-background hover:border-primary hover:bg-primary hover:text-primary-foreground")
+        }
+      >
+        Começar com {plan.name}
+        <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
+      </a>
+
       {plan.cta && (
         <p
           className={
-            "mt-6 pt-6 border-t text-sm font-medium " +
-            (plan.highlight
-              ? "border-primary-foreground/20 text-primary-foreground"
-              : "border-border text-foreground")
+            "mt-4 text-center text-xs italic " +
+            (isHighlight ? "text-primary-foreground/70" : "text-muted-foreground")
           }
         >
-          👉 {plan.cta}
+          {plan.cta}
         </p>
       )}
     </div>
@@ -193,456 +207,493 @@ function PlanCard({ plan }: { plan: Plan }) {
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="bg-primary">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-5 sm:py-6 flex items-center justify-between">
-          <img src={logoWhite} alt="COOPBASE" className="h-8 sm:h-10 md:h-12 w-auto" />
-          <a
-            href="#planos"
-            className="inline-flex text-xs sm:text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors"
-          >
-            Ver planos
-          </a>
-        </div>
-      </header>
-
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-14 sm:pt-20 md:pt-32 pb-12 sm:pb-16 md:pb-24">
-        <div className="max-w-3xl">
-          <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-5 sm:mb-6 font-medium">
-            Aceleração de crescimento para cooperativas
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 sm:mb-8">
-            Atraia mais cooperados, reduza custos operacionais e transforme sua cooperativa em uma{" "}
-            <span className="text-primary">máquina de crescimento previsível</span>.
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-10">
-            Enquanto outras cooperativas crescem e se modernizam, muitas ainda dependem de
-            indicação e processos lentos. Nós ajudamos você a mudar isso com estratégia,
-            tecnologia e execução.
-          </p>
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-            <a
-              href={DIAGNOSTICO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
-            >
-              Quero atrair mais cooperados
+    <div className="min-h-screen bg-background text-foreground antialiased">
+      {/* Sticky Nav */}
+      <header className="glass sticky top-0 z-40 border-b border-border/50">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6">
+          <img src={logo} alt="COOPBASE" className="h-8 w-auto sm:h-9" />
+          <nav className="hidden items-center gap-8 md:flex">
+            <a href="#metodo" className="text-sm text-muted-foreground transition hover:text-foreground">
+              Método
             </a>
-            <a
-              href={DIAGNOSTICO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center border border-border px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
-            >
-              Agendar diagnóstico gratuito
+            <a href="#planos" className="text-sm text-muted-foreground transition hover:text-foreground">
+              Planos
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Pain Section */}
-      <section className="bg-muted/30 border-y border-border">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
-          <div className="max-w-3xl mb-10 sm:mb-12">
-            <div className="flex items-center gap-3 mb-5 sm:mb-6">
-              <AlertTriangle className="h-5 w-5 text-primary" strokeWidth={2.5} />
-              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
-                Diagnóstico
-              </span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              Sua cooperativa está enfrentando isso?
-            </h2>
-          </div>
-
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-8">
-            {[
-              "Dificuldade para atrair novos cooperados",
-              "Baixo engajamento dos membros atuais",
-              "Dependência de indicação para crescer",
-              "Processos internos lentos e desorganizados",
-              "Falta de presença digital estruturada",
-            ].map((pain, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 bg-card border border-border rounded-lg p-4 sm:p-5"
-              >
-                <span className="text-primary text-lg leading-none mt-0.5">✗</span>
-                <span className="text-sm sm:text-base text-foreground/90">{pain}</span>
-              </li>
-            ))}
-          </ul>
-
-          <p className="text-sm sm:text-base text-muted-foreground italic max-w-3xl">
-            👉 Se você se identificou com 2 ou mais pontos, sua cooperativa está perdendo
-            oportunidades todos os dias.
-          </p>
-        </div>
-      </section>
-
-      {/* Consequence */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="flex items-center gap-3 mb-5 sm:mb-6">
-            <TrendingDown className="h-5 w-5 text-primary" strokeWidth={2.5} />
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
-              Consequência
-            </span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-            Se nada mudar, o cenário é esse:
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 max-w-4xl">
-          {[
-            "Crescimento abaixo do potencial",
-            "Perda de competitividade no mercado",
-            "Cooperados desengajados",
-            "Ineficiência operacional aumentando custos",
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 border-l-2 border-primary pl-4 py-2"
-            >
-              <span className="text-sm sm:text-base text-foreground/90">{item}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Solution — CoopScale */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-28">
-          <div className="max-w-3xl mb-10 sm:mb-12">
-            <div className="flex items-center gap-3 mb-5 sm:mb-6">
-              <Sparkles className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
-              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary-foreground/80 font-medium">
-                A solução
-              </span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
-              Conheça o Método CoopScale™
-            </h2>
-            <p className="text-base sm:text-lg text-primary-foreground/85 leading-relaxed">
-              Um sistema estruturado que combina marketing, tecnologia e processos para
-              transformar cooperativas em organizações modernas, eficientes e com crescimento
-              previsível.
-            </p>
-          </div>
-
-          <div className="mb-6">
-            <p className="text-xs sm:text-sm uppercase tracking-wider text-primary-foreground/70 font-medium mb-5">
-              Com ele você consegue:
-            </p>
-          </div>
-
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
-            {[
-              "Atrair novos cooperados de forma constante",
-              "Aumentar o engajamento dos membros",
-              "Automatizar processos internos",
-              "Criar previsibilidade de crescimento",
-            ].map((item, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 border border-primary-foreground/20 rounded-lg p-4 sm:p-5"
-              >
-                <Check className="h-5 w-5 mt-0.5 shrink-0 text-primary-foreground" strokeWidth={2.5} />
-                <span className="text-sm sm:text-base text-primary-foreground/95">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Proof */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="flex items-center gap-3 mb-5 sm:mb-6">
-            <BarChart3 className="h-5 w-5 text-primary" strokeWidth={2.5} />
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
-              Resultados
-            </span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-            Resultados que cooperativas podem alcançar
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-          {[
-            "Aumento na entrada de novos cooperados",
-            "Redução de custos operacionais",
-            "Melhoria na comunicação e engajamento",
-            "Estrutura digital profissional",
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="bg-card border border-border rounded-lg p-5 sm:p-6 hover:border-primary/40 transition-colors"
-            >
-              <Check className="h-6 w-6 text-primary mb-4" strokeWidth={2.5} />
-              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Plans */}
-      <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-          <div className="flex items-center gap-4 mb-5 sm:mb-6">
-            <span className="text-sm font-semibold text-primary">Planos de Aceleração</span>
-            <span className="h-px flex-1 bg-border" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-            Escolha o plano ideal para sua cooperativa
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Soluções recorrentes desenhadas para o momento e ambição de cada cooperativa.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-2xl lg:max-w-none mx-auto pt-4">
-          {recurringPlans.map((plan) => (
-            <PlanCard key={plan.name} plan={plan} />
-          ))}
-        </div>
-      </section>
-
-      {/* Irresistible Offer */}
-      <section className="bg-muted/30 border-y border-border">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
-          <div className="max-w-3xl mb-10 sm:mb-12">
-            <div className="flex items-center gap-3 mb-5 sm:mb-6">
-              <Gift className="h-5 w-5 text-primary" strokeWidth={2.5} />
-              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
-                Oferta gratuita
-              </span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              Receba um diagnóstico gratuito da sua cooperativa
-            </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Nós vamos analisar:
-            </p>
-          </div>
-
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 mb-10 max-w-4xl">
-            {[
-              "Como sua cooperativa está atraindo novos membros",
-              "Onde você está perdendo oportunidades",
-              "Quais são os gargalos de crescimento",
-              "O que pode ser feito para acelerar resultados",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <Check className="h-5 w-5 mt-0.5 shrink-0 text-primary" strokeWidth={2.5} />
-                <span className="text-sm sm:text-base text-foreground/90">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          <p className="text-sm sm:text-base font-medium text-foreground mb-8">
-            👉 E você recebe um plano claro de ação
-          </p>
-
+            <a href="#diagnostico" className="text-sm text-muted-foreground transition hover:text-foreground">
+              Diagnóstico
+            </a>
+          </nav>
           <a
             href={DIAGNOSTICO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-xs font-medium text-background transition hover:bg-foreground/90 sm:text-sm"
           >
-            Quero meu diagnóstico gratuito
+            Diagnóstico grátis
+            <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </div>
-      </section>
+      </header>
 
-      {/* Differential */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="flex items-center gap-3 mb-5 sm:mb-6">
-            <Target className="h-5 w-5 text-primary" strokeWidth={2.5} />
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
-              Diferencial
+      {/* Hero — assimétrico com glow */}
+      <section className="relative overflow-hidden">
+        <div className="bg-radial-primary absolute inset-0 -z-10" />
+        <div className="bg-grid absolute inset-0 -z-10 opacity-40 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_70%)]" />
+
+        <div className="mx-auto max-w-6xl px-5 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 md:pb-36 md:pt-32">
+          <div className="animate-fade-in inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3 py-1.5 text-xs text-muted-foreground backdrop-blur">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
+            Aceleração para cooperativas modernas
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-            Não somos uma agência comum
-          </h2>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
-          {[
-            "Trabalhamos exclusivamente com cooperativas",
-            "Entendemos os desafios reais do modelo cooperativista",
-            "Aplicamos estratégias específicas para esse mercado",
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="bg-card border border-border rounded-lg p-5 sm:p-6"
-            >
-              <Check className="h-6 w-6 text-primary mb-4" strokeWidth={2.5} />
-              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">{item}</p>
-            </div>
-          ))}
-        </div>
+          <h1
+            className="animate-fade-up mt-6 max-w-5xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            style={{ animationDelay: "0.1s" }}
+          >
+            Atraia mais cooperados,{" "}
+            <span className="text-gradient">reduza custos</span> e cresça com{" "}
+            <span className="italic text-primary">previsibilidade</span>.
+          </h1>
 
-        <p className="mt-8 text-sm sm:text-base text-muted-foreground italic max-w-3xl">
-          👉 Você não precisa explicar seu negócio — nós já entendemos.
-        </p>
-      </section>
-
-      {/* Positioning */}
-      <section className="bg-foreground text-background">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
-          <div className="max-w-3xl">
-            <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-background/60 mb-5 sm:mb-6 font-medium">
-              Posicionamento
-            </p>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
-              Especialistas em crescimento de cooperativas no Brasil
-            </h2>
-            <p className="text-base sm:text-lg text-background/80 leading-relaxed">
-              Ajudamos cooperativas a se modernizarem, crescerem e se tornarem referências no
-              seu setor.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Disruptive Idea — Video Analysis */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12">
-          <div className="flex items-center gap-3 mb-5 sm:mb-6">
-            <Video className="h-5 w-5 text-primary" strokeWidth={2.5} />
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
-              Exclusivo
-            </span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-            Receba uma análise em vídeo da sua cooperativa
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Você envia suas informações e nós gravamos um vídeo personalizado mostrando:
+          <p
+            className="animate-fade-up mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:mt-8 sm:text-lg md:text-xl"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Enquanto outras cooperativas crescem e se modernizam, muitas ainda dependem de
+            indicação e processos lentos. Nós mudamos isso com{" "}
+            <span className="font-medium text-foreground">estratégia, tecnologia e execução</span>.
           </p>
-        </div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 mb-10">
-          {[
-            "Os erros que estão travando seu crescimento",
-            "Oportunidades que você não está aproveitando",
-            "Como melhorar seus resultados rapidamente",
-          ].map((item, i) => (
-            <li
-              key={i}
-              className="bg-card border border-border rounded-lg p-5 sm:p-6"
+          <div
+            className="animate-fade-up mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <a
+              href={DIAGNOSTICO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25 transition hover:shadow-xl hover:shadow-primary/30 sm:px-8 sm:py-4"
             >
-              <span className="text-2xl font-semibold text-primary block mb-3">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">{item}</p>
-            </li>
-          ))}
-        </ul>
-
-        <a
-          href={DIAGNOSTICO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
-        >
-          Solicitar análise personalizada
-        </a>
-      </section>
-
-      {/* Risk Reduction */}
-      <section className="bg-muted/30 border-y border-border">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 md:py-24">
-          <div className="max-w-3xl mb-10 sm:mb-12">
-            <div className="flex items-center gap-3 mb-5 sm:mb-6">
-              <Shield className="h-5 w-5 text-primary" strokeWidth={2.5} />
-              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-medium">
-                Sem riscos
-              </span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-              Compromisso com resultado real
-            </h2>
+              Quero atrair mais cooperados
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#planos"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-6 py-3.5 text-sm font-medium backdrop-blur transition hover:border-foreground/30 sm:px-8 sm:py-4"
+            >
+              <PlayCircle className="h-4 w-4" />
+              Conheça o método
+            </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+          {/* Stats faixa */}
+          <div
+            className="animate-fade-up mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-border pt-10 sm:mt-20 sm:grid-cols-4 sm:gap-x-10"
+            style={{ animationDelay: "0.4s" }}
+          >
             {[
-              "Sem promessas genéricas",
-              "Estratégias aplicadas e testadas",
-              "Foco total em resultado real",
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-3 bg-card border border-border rounded-lg p-5"
-              >
-                <Check className="h-5 w-5 mt-0.5 shrink-0 text-primary" strokeWidth={2.5} />
-                <span className="text-sm sm:text-base text-foreground/90">{item}</span>
+              { v: "+ cooperados", l: "Crescimento previsível" },
+              { v: "− custos", l: "Eficiência operacional" },
+              { v: "100%", l: "Foco em cooperativas" },
+              { v: "3 frentes", l: "Marketing · Tech · Processos" },
+            ].map((s, i) => (
+              <div key={i}>
+                <p className="text-2xl font-semibold tracking-tight sm:text-3xl">{s.v}</p>
+                <p className="mt-1 text-xs text-muted-foreground sm:text-sm">{s.l}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-32">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+      {/* Marquee de "dores" — movimento, leveza */}
+      <section className="border-y border-border bg-muted/30 py-6">
+        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+          <div className="animate-marquee flex shrink-0 items-center gap-12 pr-12 text-sm text-muted-foreground">
+            {[
+              "Dificuldade para atrair novos cooperados",
+              "Baixo engajamento dos membros",
+              "Dependência de indicação",
+              "Processos internos lentos",
+              "Falta de presença digital",
+              "Crescimento abaixo do potencial",
+            ]
+              .concat([
+                "Dificuldade para atrair novos cooperados",
+                "Baixo engajamento dos membros",
+                "Dependência de indicação",
+                "Processos internos lentos",
+                "Falta de presença digital",
+                "Crescimento abaixo do potencial",
+              ])
+              .map((t, i) => (
+                <span key={i} className="flex items-center gap-3 whitespace-nowrap">
+                  <span className="text-primary">✗</span>
+                  {t}
+                </span>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pain x Solution — split */}
+      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-28">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+          <div>
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+              O problema
+            </span>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Sua cooperativa pode estar{" "}
+              <span className="text-muted-foreground">perdendo oportunidades</span> todos os dias.
+            </h2>
+            <ul className="mt-8 space-y-3">
+              {[
+                "Crescimento abaixo do potencial",
+                "Perda de competitividade no mercado",
+                "Cooperados desengajados",
+                "Ineficiência operacional aumentando custos",
+              ].map((t, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 rounded-xl border border-border/60 bg-card p-4"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-destructive/10 text-destructive">
+                    ✗
+                  </span>
+                  <span className="text-sm text-foreground/90 sm:text-base">{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:pl-8 md:pt-16">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              A virada
+            </span>
+            <h3 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+              Com método e execução, o jogo muda em poucos meses.
+            </h3>
+            <p className="mt-4 text-muted-foreground">
+              Não é sorte. É um sistema testado, aplicado por uma equipe que vive o universo
+              cooperativista todos os dias.
+            </p>
+
+            <div className="mt-8 rounded-2xl border border-primary/20 bg-primary/5 p-6">
+              <div className="flex items-center gap-3">
+                <Sparkles className="h-5 w-5 text-primary" />
+                <span className="text-sm font-semibold">Diagnóstico gratuito</span>
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Em 1 conversa identificamos os 3 maiores gargalos da sua cooperativa — e o
+                caminho para destravar cada um.
+              </p>
+              <a
+                href={DIAGNOSTICO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:gap-2 transition-all"
+              >
+                Quero meu diagnóstico
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Método CoopScale — bento */}
+      <section id="metodo" className="bg-foreground text-background">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-28 md:py-32">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-background/20 px-3 py-1 text-xs uppercase tracking-wider text-background/70">
+              <Sparkles className="h-3 w-3" />
+              Método CoopScale™
+            </span>
+            <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+              Marketing, tecnologia e processos —{" "}
+              <span className="text-background/60">orquestrados</span>.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-background/70 sm:text-lg">
+              Um sistema estruturado para transformar cooperativas em organizações modernas,
+              eficientes e com crescimento previsível.
+            </p>
+          </div>
+
+          {/* Bento grid */}
+          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
+            {/* Card grande */}
+            <div className="md:col-span-2 md:row-span-2 rounded-2xl border border-background/10 bg-background/5 p-6 sm:p-8">
+              <Users className="h-7 w-7 text-primary" strokeWidth={1.8} />
+              <h3 className="mt-6 text-xl font-semibold sm:text-2xl">
+                Atrair novos cooperados de forma constante
+              </h3>
+              <p className="mt-3 max-w-md text-background/70">
+                Funis de aquisição, conteúdo posicionador e tráfego pago alinhados ao perfil de
+                cooperado ideal — sem depender de indicação.
+              </p>
+              <div className="mt-8 grid grid-cols-3 gap-3">
+                {["Conteúdo", "Tráfego", "Conversão"].map((t) => (
+                  <div
+                    key={t}
+                    className="rounded-lg border border-background/10 bg-background/5 px-3 py-2 text-center text-xs text-background/80"
+                  >
+                    {t}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-background/10 bg-background/5 p-6">
+              <TrendingUp className="h-6 w-6 text-primary" strokeWidth={1.8} />
+              <h3 className="mt-5 text-base font-semibold">Engajamento dos membros</h3>
+              <p className="mt-2 text-sm text-background/70">
+                Comunicação contínua que mantém o cooperado ativo e participativo.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-background/10 bg-background/5 p-6">
+              <Zap className="h-6 w-6 text-primary" strokeWidth={1.8} />
+              <h3 className="mt-5 text-base font-semibold">Processos automatizados</h3>
+              <p className="mt-2 text-sm text-background/70">
+                Menos retrabalho, menos custo, mais agilidade nas operações internas.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-background/10 bg-background/5 p-6 md:col-span-3">
+              <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <h3 className="text-base font-semibold">Previsibilidade de crescimento</h3>
+                  <p className="mt-1 text-sm text-background/70">
+                    Você sabe quanto entra, quanto custa e o que esperar de cada mês.
+                  </p>
+                </div>
+                <a
+                  href={DIAGNOSTICO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-background/90 transition"
+                >
+                  Aplicar à minha cooperativa
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Planos */}
+      <section id="planos" className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-28">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+            Planos de aceleração
+          </span>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
+            Escolha o ritmo do seu crescimento.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Soluções recorrentes desenhadas para o momento e a ambição de cada cooperativa.
+          </p>
+        </div>
+
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-center lg:gap-6">
+          {recurringPlans.map((plan) => (
+            <PlanCard key={plan.name} plan={plan} />
+          ))}
+        </div>
+
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          Não sabe qual escolher?{" "}
+          <a
+            href={DIAGNOSTICO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-foreground underline underline-offset-4 hover:text-primary"
+          >
+            Fale conosco
+          </a>{" "}
+          — recomendamos o ideal no diagnóstico.
+        </p>
+      </section>
+
+      {/* Diferencial — split com texto grande */}
+      <section className="border-y border-border bg-muted/30">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-28">
+          <div className="grid gap-10 md:grid-cols-12 md:gap-12">
+            <div className="md:col-span-5">
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                Diferencial
+              </span>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+                Não somos uma agência comum.
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                Você não precisa explicar seu negócio — nós já entendemos.
+              </p>
+            </div>
+
+            <div className="md:col-span-7">
+              <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border">
+                {[
+                  {
+                    t: "Exclusivo para cooperativas",
+                    d: "Trabalhamos só com cooperativas — sem distrações de outros mercados.",
+                  },
+                  {
+                    t: "Conhecimento real do modelo",
+                    d: "Entendemos governança, conselho, assembleias e a cultura cooperativista.",
+                  },
+                  {
+                    t: "Estratégias específicas",
+                    d: "Aplicamos táticas validadas no setor, não fórmulas genéricas.",
+                  },
+                ].map((d, i) => (
+                  <div key={i} className="bg-background p-6 sm:p-8">
+                    <div className="flex items-start gap-4">
+                      <span className="text-2xl font-semibold tabular-nums text-primary">
+                        0{i + 1}
+                      </span>
+                      <div>
+                        <h3 className="font-semibold">{d.t}</h3>
+                        <p className="mt-1 text-sm text-muted-foreground">{d.d}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Análise em vídeo — destaque diferenciador */}
+      <section className="mx-auto max-w-6xl px-5 py-20 sm:px-6 sm:py-28">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-8 sm:p-12 md:p-16">
+          <div className="bg-radial-primary absolute inset-0 -z-10 opacity-50" />
+          <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary">
+                <Video className="h-3.5 w-3.5" />
+                Exclusivo
+              </span>
+              <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+                Receba uma análise{" "}
+                <span className="italic text-primary">em vídeo</span> da sua cooperativa.
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Você envia suas informações e gravamos um vídeo personalizado com diagnóstico e
+                plano de ação.
+              </p>
+              <a
+                href={DIAGNOSTICO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition hover:shadow-lg hover:shadow-primary/30"
+              >
+                Solicitar minha análise
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+
+            <ul className="space-y-3">
+              {[
+                "Erros que estão travando seu crescimento",
+                "Oportunidades que você não está aproveitando",
+                "Como melhorar resultados rapidamente",
+              ].map((t, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-4 rounded-xl border border-border/60 bg-background/60 p-4 backdrop-blur"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+                    {i + 1}
+                  </span>
+                  <span className="pt-1 text-sm text-foreground/90 sm:text-base">{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Risk reduction — minimal */}
+      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-6 sm:pb-24">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            { i: Shield, t: "Sem promessas genéricas" },
+            { i: Check, t: "Estratégias testadas" },
+            { i: TrendingUp, t: "Foco em resultado real" },
+          ].map((d, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4"
+            >
+              <d.i className="h-5 w-5 text-primary" strokeWidth={2} />
+              <span className="text-sm font-medium">{d.t}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Final CTA — grande */}
+      <section id="diagnostico" className="relative overflow-hidden bg-primary text-primary-foreground">
+        <div className="bg-grid absolute inset-0 opacity-10" />
+        <div className="relative mx-auto max-w-6xl px-5 py-24 text-center sm:px-6 sm:py-32">
+          <h2 className="mx-auto max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
             Pronto para acelerar sua cooperativa?
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
-            Pare de depender do acaso para crescer. Comece a construir um sistema
-            previsível de crescimento.
+          <p className="mx-auto mt-6 max-w-xl text-base text-primary-foreground/80 sm:text-lg">
+            Pare de depender do acaso. Comece a construir um sistema previsível de crescimento.
           </p>
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <a
               href={DIAGNOSTICO_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+              className="group inline-flex items-center gap-2 rounded-full bg-background px-7 py-4 text-sm font-medium text-foreground transition hover:bg-background/90"
             >
               Quero meu diagnóstico gratuito
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href={DIAGNOSTICO_URL}
+              href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center border border-border px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-7 py-4 text-sm font-medium text-primary-foreground transition hover:bg-primary-foreground/10"
             >
-              Quero atrair mais cooperados agora
+              Falar no WhatsApp
             </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-6 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
-            <p className="text-xs sm:text-sm text-foreground font-medium">Coopbase © 2026</p>
-            <p className="text-xs text-muted-foreground mt-1">
+      <footer className="bg-foreground text-background/70">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 py-10 sm:flex-row sm:items-center sm:px-6">
+          <div className="flex items-center gap-4">
+            <img src={logoWhite} alt="COOPBASE" className="h-8 w-auto" />
+            <div className="hidden h-6 w-px bg-background/20 sm:block" />
+            <p className="text-xs sm:text-sm">
               Especialistas em aceleração de cooperativas
             </p>
           </div>
-          <img src={logo} alt="COOPBASE" className="h-5 sm:h-6 w-auto opacity-60" />
+          <p className="text-xs text-background/50">© 2026 Coopbase. Todos os direitos reservados.</p>
         </div>
       </footer>
 
-      {/* WhatsApp floating button */}
+      {/* WhatsApp floating */}
       <a
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Falar com a COOPBASE no WhatsApp"
-        className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center justify-center h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:scale-105 active:scale-95 transition-transform"
+        aria-label="Falar no WhatsApp"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-xl shadow-primary/30 transition hover:scale-105 active:scale-95 sm:bottom-6 sm:right-6"
       >
+        <span className="absolute inset-0 -z-10 animate-pulse-slow rounded-full bg-primary/40 blur-xl" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
