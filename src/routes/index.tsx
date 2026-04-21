@@ -58,7 +58,7 @@ const recurringPlans: Plan[] = [
     features: [
       "*Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Estruturação de CRM — estruturação do funil de relacionamento e vendas para a equipe comercial.",
-      "Desenvolvimento de 3 landing pages — páginas de conversão sob medida para campanhas e captação de leads.",
+      "Desenvolvimento de até 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
       "Acompanhamento de processos — 1 sessão de consultoria no primeiro mês para mapear e estruturar fluxos de trabalhos internos.",
     ],
     highlight: true,
@@ -71,7 +71,7 @@ const recurringPlans: Plan[] = [
       "Máximo alinhamento entre o volume de oportunidades geradas pelo marketing e a eficiência dos processos técnicos da equipe.",
     inherits: "Tudo do plano Tração, mais:",
     features: [
-      "Desenvolvimento de 3 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
+      "Desenvolvimento de 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
       "Acompanhamento contínuo de processos técnicos — consultoria estendida por 3 meses (2 sessões mensais, 6 encontros) para otimizar fluxos de trabalho e garantir execução eficiente das operações.",
     ],
   },
@@ -301,7 +301,7 @@ function Index() {
                   { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                   { feature: "Estruturação de CRM", values: [false, true, true] },
                   { feature: "Acompanhamento de processos (1º mês)", values: [false, "1 sessão", "1 sessão"] },
-                  { feature: "Desenvolvimento de landing pages", values: [false, "3 páginas", "3 páginas"] },
+                  { feature: "Desenvolvimento de landing pages", values: [false, "Até 10 páginas", "10 páginas"] },
                   { feature: "Acompanhamento contínuo de processos técnicos", values: [false, false, "6 sessões em 3 meses"] },
                   { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                 ].map((row, i) => (
