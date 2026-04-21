@@ -59,7 +59,7 @@ const recurringPlans: Plan[] = [
       "Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Gestão de CRM de vendas — estruturação do funil de relacionamento e vendas para a equipe comercial.",
       "Desenvolvimento de 1 landing page — página de conversão sob medida para campanhas e captação de leads.",
-      "Kick-off de processos — 2 sessões exclusivas de consultoria no primeiro mês para alinhar marketing e atendimento.",
+      "Kick-off de processos técnicos — 2 sessões exclusivas de consultoria no primeiro mês para mapear e estruturar fluxos de trabalho internos.",
     ],
     highlight: true,
   },
@@ -68,11 +68,11 @@ const recurringPlans: Plan[] = [
     price: "R$ 12.000",
     priceSuffix: "/ mês",
     objective:
-      "Máximo alinhamento entre o volume de interessados gerados pelo marketing e a capacidade de atendimento da equipe.",
+      "Máximo alinhamento entre o volume de oportunidades geradas pelo marketing e a eficiência dos processos técnicos da equipe.",
     inherits: "Tudo do plano Tração, mais:",
     features: [
       "Desenvolvimento de 3 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
-      "Acompanhamento contínuo de processos — consultoria estendida por 3 meses (2 sessões mensais, 6 encontros) para garantir conversão eficiente das oportunidades.",
+      "Acompanhamento contínuo de processos técnicos — consultoria estendida por 3 meses (2 sessões mensais, 6 encontros) para otimizar fluxos de trabalho e garantir execução eficiente das operações.",
     ],
   },
 ];
@@ -83,11 +83,11 @@ const projects: Plan[] = [
     price: "R$ 20.000",
     priceSuffix: "projeto fechado",
     objective:
-      "Identificar e eliminar as falhas de processos que impedem a sua cooperativa de escalar e atender mais associados com a mesma estrutura.",
+      "Identificar e eliminar as falhas nos processos técnicos de trabalho que impedem a sua cooperativa de escalar e operar com mais eficiência usando a mesma estrutura.",
     features: [
-      "Mapeamento e diagnóstico — análise completa dos processos atuais e identificação de gargalos.",
-      "Plano de resolução — criação de novos fluxos de trabalho visando agilidade e redução de custos.",
-      "Implementação assistida — 3 meses de acompanhamento lado a lado com a equipe, incluindo 6 visitas técnicas estruturadas.",
+      "Mapeamento e diagnóstico — análise completa dos processos técnicos e fluxos de trabalho atuais, com identificação de gargalos operacionais.",
+      "Plano de resolução — redesenho de fluxos de trabalho e procedimentos internos visando agilidade, padronização e redução de custos.",
+      "Implementação assistida — 3 meses de acompanhamento lado a lado com a equipe técnica, incluindo 6 visitas estruturadas para validar a execução dos novos processos.",
     ],
   },
   {
@@ -98,8 +98,8 @@ const projects: Plan[] = [
       "Levar a cooperativa para a vanguarda tecnológica. 77% dos tomadores de decisão já consideram que a IA agiliza drasticamente os processos internos.",
     inherits: "Tudo da Solução A, mais:",
     features: [
-      "Imersão profunda — 3 meses de acompanhamento intensivo, dobrando o suporte para 12 visitas técnicas.",
-      "Implantação de IA — configuração de tecnologias de Inteligência Artificial sob medida (automação de atendimento, qualificação de associados, fluxos de dados), reduzindo trabalho manual e elevando a experiência do cooperado.",
+      "Imersão profunda — 3 meses de acompanhamento intensivo nos processos técnicos, dobrando o suporte para 12 visitas estruturadas.",
+      "Implantação de IA — configuração de tecnologias de Inteligência Artificial sob medida para automação de processos internos, fluxos de dados e tarefas operacionais repetitivas, reduzindo trabalho manual e elevando a produtividade da equipe.",
     ],
     highlight: true,
   },
@@ -300,9 +300,9 @@ function Index() {
                   { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
                   { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                   { feature: "Gestão de CRM de vendas", values: [false, true, true] },
-                  { feature: "Kick-off de processos (1º mês)", values: [false, "2 sessões", "2 sessões"] },
+                  { feature: "Kick-off de processos técnicos (1º mês)", values: [false, "2 sessões", "2 sessões"] },
                   { feature: "Desenvolvimento de landing pages", values: [false, "1 página", "3 páginas"] },
-                  { feature: "Acompanhamento contínuo de processos", values: [false, false, "6 sessões em 3 meses"] },
+                  { feature: "Acompanhamento contínuo de processos técnicos", values: [false, false, "6 sessões em 3 meses"] },
                   { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-border last:border-0">
@@ -364,10 +364,10 @@ function Index() {
             Projetos de transformação e eficiência operacional
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Consultorias de alto impacto para destravar gargalos. A adoção de
-            ferramentas inteligentes e fluxos automatizados atua como motor de
-            crescimento, competitividade e redução de custos reais para as
-            operações.
+            Consultorias de alto impacto para destravar gargalos nos processos
+            técnicos de trabalho. A adoção de ferramentas inteligentes e fluxos
+            automatizados atua como motor de crescimento, competitividade e
+            redução de custos reais para as operações da cooperativa.
           </p>
         </div>
 
