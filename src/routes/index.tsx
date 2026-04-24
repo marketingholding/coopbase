@@ -252,100 +252,31 @@ function Index() {
         </div>
       </section>
 
-      {/* Section 1 — Recurring */}
-      <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
+      {/* Section 1 — Structuring projects */}
+      <section id="projetos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-4 mb-5 sm:mb-6">
             <span className="text-sm font-semibold text-primary">01</span>
             <span className="h-px flex-1 bg-border" />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-            Planos de aceleração contínua
+            Projetos de estruturação
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Contratos de 12 meses com soluções focadas em construir autoridade
-            digital, atrair cooperados e gerar negócios recorrentes.
+            Projetos pontuais para diagnosticar, reestruturar e inovar a
+            operação da sua cooperativa — com entregas claras e prazos definidos.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
-          {recurringPlans.map((plan) => (
+          {structuringProjects.map((plan) => (
             <PlanCard key={plan.name} plan={plan} />
           ))}
         </div>
-
-        {/* Comparison table */}
-        <div className="mt-16 sm:mt-20 md:mt-24">
-          <div className="max-w-3xl mb-8 sm:mb-10">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-3">
-              Compare os planos
-            </h3>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Veja em um relance o que está incluso em cada plano recorrente.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto -mx-5 sm:mx-0 px-5 sm:px-0">
-            <table className="w-full min-w-[640px] border-collapse text-left">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="py-4 sm:py-5 pr-4 text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                    Recursos
-                  </th>
-                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
-                    <div className="text-sm sm:text-base font-semibold">Essencial</div>
-                    <div className="text-xs text-muted-foreground mt-1">R$ 4.000/mês</div>
-                  </th>
-                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center bg-primary/5 border-x border-primary/20">
-                    <div className="text-sm sm:text-base font-semibold text-primary">Tração</div>
-                    <div className="text-xs text-muted-foreground mt-1">R$ 8.000/mês</div>
-                  </th>
-                  <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
-                    <div className="text-sm sm:text-base font-semibold">Performance</div>
-                    <div className="text-xs text-muted-foreground mt-1">R$ 12.000/mês</div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                {[
-                  { feature: "Postagens estratégicas mensais", values: ["12", "16", "20"] },
-                  { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
-                  { feature: "Desenvolvimento de landing pages", values: ["1 página", "Até 10 páginas", "Até 10 páginas"] },
-                  { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
-                  { feature: "Estruturação de CRM", values: [false, true, true] },
-                  { feature: "Consultoria de processos", values: [false, "1 sessão", "1 sessão"] },
-                  { feature: "Comitê Estratégico Mensal", values: [false, false, true] },
-                  { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
-                ].map((row, i) => (
-                  <tr key={i} className="border-b border-border last:border-0">
-                    <td className="py-4 pr-4 text-foreground/90">{row.feature}</td>
-                    {row.values.map((val, j) => (
-                      <td
-                        key={j}
-                        className={
-                          "py-4 px-3 sm:px-4 text-center " +
-                          (j === 1 ? "bg-primary/5 border-x border-primary/20" : "")
-                        }
-                      >
-                        {val === true ? (
-                          <Check className="h-4 w-4 text-primary inline-block" strokeWidth={2.5} />
-                        ) : val === false ? (
-                          <span className="text-muted-foreground/40">—</span>
-                        ) : (
-                          <span className="text-foreground/80">{val}</span>
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
       </section>
 
-      {/* Section 2 — Structuring projects */}
-      <section id="projetos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
+      {/* Section 2 — Recurring plans */}
+      <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
           <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
             <div className="flex items-center gap-4 mb-5 sm:mb-6">
@@ -353,18 +284,87 @@ function Index() {
               <span className="h-px flex-1 bg-border" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-              Projetos de estruturação
+              Planos de aceleração contínua
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Projetos pontuais para diagnosticar, reestruturar e inovar a
-              operação da sua cooperativa — com entregas claras e prazos definidos.
+              Contratos de 12 meses com soluções focadas em construir autoridade
+              digital, atrair cooperados e gerar negócios recorrentes.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
-            {structuringProjects.map((plan) => (
+            {recurringPlans.map((plan) => (
               <PlanCard key={plan.name} plan={plan} />
             ))}
+          </div>
+
+          {/* Comparison table */}
+          <div className="mt-16 sm:mt-20 md:mt-24">
+            <div className="max-w-3xl mb-8 sm:mb-10">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+                Compare os planos
+              </h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Veja em um relance o que está incluso em cada plano recorrente.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto -mx-5 sm:mx-0 px-5 sm:px-0">
+              <table className="w-full min-w-[640px] border-collapse text-left">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="py-4 sm:py-5 pr-4 text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                      Recursos
+                    </th>
+                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                      <div className="text-sm sm:text-base font-semibold">Essencial</div>
+                      <div className="text-xs text-muted-foreground mt-1">R$ 4.000/mês</div>
+                    </th>
+                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center bg-primary/5 border-x border-primary/20">
+                      <div className="text-sm sm:text-base font-semibold text-primary">Tração</div>
+                      <div className="text-xs text-muted-foreground mt-1">R$ 8.000/mês</div>
+                    </th>
+                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                      <div className="text-sm sm:text-base font-semibold">Performance</div>
+                      <div className="text-xs text-muted-foreground mt-1">R$ 12.000/mês</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-sm">
+                  {[
+                    { feature: "Postagens estratégicas mensais", values: ["12", "16", "20"] },
+                    { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
+                    { feature: "Desenvolvimento de landing pages", values: ["1 página", "Até 10 páginas", "Até 10 páginas"] },
+                    { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
+                    { feature: "Estruturação de CRM", values: [false, true, true] },
+                    { feature: "Consultoria de processos", values: [false, "1 sessão", "1 sessão"] },
+                    { feature: "Comitê Estratégico Mensal", values: [false, false, true] },
+                    { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-b border-border last:border-0">
+                      <td className="py-4 pr-4 text-foreground/90">{row.feature}</td>
+                      {row.values.map((val, j) => (
+                        <td
+                          key={j}
+                          className={
+                            "py-4 px-3 sm:px-4 text-center " +
+                            (j === 1 ? "bg-primary/5 border-x border-primary/20" : "")
+                          }
+                        >
+                          {val === true ? (
+                            <Check className="h-4 w-4 text-primary inline-block" strokeWidth={2.5} />
+                          ) : val === false ? (
+                            <span className="text-muted-foreground/40">—</span>
+                          ) : (
+                            <span className="text-foreground/80">{val}</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
