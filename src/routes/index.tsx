@@ -45,7 +45,7 @@ const structuringProjects: Plan[] = [
     features: [
       "Diagnóstico completo da operação atual.",
       "Identificação de gargalos e oportunidades de melhoria.",
-      "Entrega de um plano de ação.",
+      "Entrega de um Plano de Ação (Roadmap) detalhado para a cooperativa.",
     ],
   },
   {
@@ -69,7 +69,7 @@ const structuringProjects: Plan[] = [
     features: [
       "3 meses de acompanhamento com 12 encontros.",
       "Implantação de automações de Inteligência Artificial.",
-      "Otimização de produtividade com tecnologias de ponta.",
+      "Treinamento e capacitação da equipe técnica para operar o novo ecossistema automatizado.",
     ],
   },
 ];
