@@ -36,6 +36,44 @@ type Plan = {
   highlight?: boolean;
 };
 
+const structuringProjects: Plan[] = [
+  {
+    name: "Consultoria Starter",
+    price: "R$ 5.000",
+    objective:
+      "Avaliação inicial para diagnosticar o momento da cooperativa e mapear as primeiras oportunidades de evolução.",
+    features: [
+      "Diagnóstico completo da operação atual.",
+      "Identificação de gargalos e oportunidades de melhoria.",
+      "Recomendações estratégicas para os próximos passos.",
+    ],
+  },
+  {
+    name: "Reestruturação Operacional",
+    price: "R$ 20.000",
+    objective:
+      "Projeto de acompanhamento por 3 meses para mapear gargalos e redesenhar fluxos comerciais e técnicos.",
+    features: [
+      "Mapeamento completo de gargalos operacionais.",
+      "Redesenho de fluxos comerciais e técnicos.",
+      "6 encontros ao longo de 3 meses para implementação acompanhada.",
+    ],
+    highlight: true,
+  },
+  {
+    name: "Inovação & IA",
+    price: "R$ 30.000",
+    objective:
+      "Upgrade do projeto de reestruturação com implantação de automações de Inteligência Artificial para ganho de produtividade.",
+    inherits: "Tudo da Reestruturação Operacional, mais:",
+    features: [
+      "3 meses de acompanhamento com 12 encontros.",
+      "Implantação de automações de Inteligência Artificial.",
+      "Otimização de produtividade com tecnologias de ponta.",
+    ],
+  },
+];
+
 const recurringPlans: Plan[] = [
   {
     name: "Essencial",
