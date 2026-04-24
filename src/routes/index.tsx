@@ -338,7 +338,7 @@ function Index() {
                     { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                     { feature: "Estruturação de CRM", values: [false, true, true] },
                     
-                    { feature: "Comitê Estratégico Mensal", values: [false, false, true] },
+                    { feature: "Implantação de processos com I.A.", values: [false, false, true] },
                     { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                   ].map((row, i) => (
                     <tr key={i} className="border-b border-border last:border-0">
