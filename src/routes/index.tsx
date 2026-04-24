@@ -110,7 +110,7 @@ const recurringPlans: Plan[] = [
       "Máximo alinhamento entre o volume de oportunidades geradas pelo marketing e a eficiência dos processos técnicos da equipe.",
     inherits: "Tudo do plano Tração, mais:",
     features: [
-      "Gestão de mídias sociais ampliada — 20 postagens estratégicas por mês.",
+      "Gestão de tráfego avançada com otimização de conversão (CRO).",
       "Implantação de processos com I.A. — automações inteligentes para otimizar fluxos operacionais e ganhar produtividade.",
     ],
   },
