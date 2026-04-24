@@ -266,9 +266,6 @@ function Index() {
             <a href="#planos" className="hover:text-foreground transition-colors">
               Planos
             </a>
-            <a href="#comparar" className="hover:text-foreground transition-colors">
-              Comparar
-            </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"
