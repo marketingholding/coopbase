@@ -112,7 +112,7 @@ const recurringPlans: Plan[] = [
     inherits: "Tudo do plano Tração, mais:",
     features: [
       "Gestão de mídias sociais ampliada — 20 postagens estratégicas por mês.",
-      "Comitê Estratégico Mensal — encontros recorrentes para acompanhamento de processos e alinhamento estratégico contínuo.",
+      "Implantação de processos com I.A. — automações inteligentes para otimizar fluxos operacionais e ganhar produtividade.",
     ],
   },
 ];
@@ -338,7 +338,7 @@ function Index() {
                     { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                     { feature: "Estruturação de CRM", values: [false, true, true] },
                     
-                    { feature: "Comitê Estratégico Mensal", values: [false, false, true] },
+                    { feature: "Implantação de processos com I.A.", values: [false, false, true] },
                     { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                   ].map((row, i) => (
                     <tr key={i} className="border-b border-border last:border-0">
