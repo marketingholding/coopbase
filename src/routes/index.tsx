@@ -275,7 +275,7 @@ function Index() {
                   { feature: "Desenvolvimento de landing pages", values: ["1 página", "Até 10 páginas", "Até 10 páginas"] },
                   { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                   { feature: "Estruturação de CRM", values: [false, true, true] },
-                  { feature: "Consultoria de processos (1º mês)", values: [false, "1 sessão", "1 sessão"] },
+                  { feature: "Consultoria de processos", values: [false, "1 sessão", "1 sessão"] },
                   { feature: "Comitê Estratégico Mensal", values: [false, false, true] },
                   { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                 ].map((row, i) => (
