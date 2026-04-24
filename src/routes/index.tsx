@@ -99,7 +99,7 @@ const recurringPlans: Plan[] = [
       "Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Estruturação de CRM — estruturação do funil de relacionamento e vendas para a equipe comercial.",
       "Desenvolvimento de até 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
-      "Consultoria de processos — 1 sessão no primeiro mês para mapear e estruturar fluxos de trabalhos internos.",
+      
     ],
     highlight: true,
   },
@@ -337,7 +337,7 @@ function Index() {
                     { feature: "Desenvolvimento de landing pages", values: ["1 página", "Até 10 páginas", "Até 10 páginas"] },
                     { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                     { feature: "Estruturação de CRM", values: [false, true, true] },
-                    { feature: "Consultoria de processos", values: [false, "1 sessão", "1 sessão"] },
+                    
                     { feature: "Comitê Estratégico Mensal", values: [false, false, true] },
                     { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                   ].map((row, i) => (
