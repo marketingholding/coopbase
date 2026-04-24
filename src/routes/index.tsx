@@ -111,7 +111,7 @@ const recurringPlans: Plan[] = [
     inherits: "Tudo do plano Tração, mais:",
     features: [
       "Gestão de tráfego avançada com otimização de conversão (CRO).",
-      "Implantação de processos com I.A. — automações inteligentes para otimizar fluxos operacionais e ganhar produtividade.",
+      "Automação de E-mail Marketing.",
     ],
   },
 ];
