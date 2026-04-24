@@ -306,70 +306,33 @@ function Index() {
         </div>
       </section>
 
-      {/* CTA after comparison */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-24">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
-            Pronto para acelerar sua cooperativa?
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
-            Converse com nosso time pelo WhatsApp e descubra qual plano é o
-            ideal para o momento da sua cooperativa.
-          </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
-          >
-            Falar com a COOPBASE
-          </a>
-        </div>
-      </section>
-
-      {/* Section 2 — Projects */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-          <div className="flex items-center gap-4 mb-5 sm:mb-6">
-            <span className="text-sm font-semibold text-primary">02</span>
-            <span className="h-px flex-1 bg-border" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-            Projetos de transformação e eficiência operacional
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Consultorias de alto impacto para destravar gargalos nos processos
-            técnicos de trabalho. A adoção de ferramentas inteligentes e fluxos
-            automatizados atua como motor de crescimento, competitividade e
-            redução de custos reais para as operações da cooperativa.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
-          {projects.map((plan) => (
-            <PlanCard key={plan.name} plan={plan} />
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* Section 2 — Transformation proposal */}
       <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-32">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
-            Pronto para acelerar sua cooperativa?
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
-            Converse com nosso time e descubra qual plano é o ideal para o
-            momento da sua cooperativa.
-          </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
-          >
-            Falar com a COOPBASE
-          </a>
+        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
+          <div className="max-w-3xl mb-10 sm:mb-12">
+            <div className="flex items-center gap-4 mb-5 sm:mb-6">
+              <span className="text-sm font-semibold text-primary">02</span>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+              Uma proposta de transformação para a sua cooperativa.
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
+              Mais do que marketing: a COOPBASE entrega um caminho estruturado
+              para profissionalizar a comunicação, atrair novos cooperados,
+              gerar negócios recorrentes e modernizar os processos internos da
+              sua operação. Vamos conversar sobre o momento da sua cooperativa
+              e construir, juntos, o plano certo para os próximos 12 meses.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+            >
+              Falar com a COOPBASE
+            </a>
+          </div>
         </div>
       </section>
 
