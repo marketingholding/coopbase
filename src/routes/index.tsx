@@ -112,6 +112,7 @@ const recurringPlans: Plan[] = [
     features: [
       "Gestão de tráfego avançada com otimização de conversão (CRO).",
       "Automação de E-mail Marketing.",
+      "Dashboards de Business Intelligence (BI).",
     ],
   },
 ];
