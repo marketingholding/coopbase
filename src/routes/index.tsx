@@ -121,27 +121,29 @@ function PlanCard({ plan }: { plan: Plan }) {
   return (
     <div
       className={
-        "flex flex-col h-full rounded-lg border p-5 sm:p-6 lg:p-8 xl:p-10 transition-colors " +
+        "flex flex-col h-full rounded-lg border p-6 sm:p-8 lg:p-10 transition-colors " +
         (plan.highlight
           ? "bg-primary text-primary-foreground border-primary"
           : "bg-card text-card-foreground border-border hover:border-primary/40")
       }
     >
-      <div className="mb-5 sm:mb-6">
+      <div className="mb-8">
         <p
           className={
-            "text-[11px] sm:text-xs uppercase tracking-[0.2em] mb-2 sm:mb-3 " +
+            "text-[10px] sm:text-[11px] uppercase tracking-[0.24em] mb-3 font-medium " +
             (plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground")
           }
         >
           Plano
         </p>
-        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold">{plan.name}</h3>
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight">
+          {plan.name}
+        </h3>
       </div>
 
-      <div className="mb-6 sm:mb-8">
+      <div className="mb-8 sm:mb-10">
         <div className="flex items-baseline gap-2 flex-wrap">
-          <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight">
+          <span className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
             {plan.price}
           </span>
           {plan.priceSuffix && (
@@ -159,7 +161,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
       <p
         className={
-          "text-sm leading-relaxed mb-8 " +
+          "text-sm leading-[1.7] mb-10 " +
           (plan.highlight ? "text-primary-foreground/85" : "text-muted-foreground")
         }
       >
@@ -169,7 +171,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       {plan.inherits && (
         <p
           className={
-            "text-xs uppercase tracking-wider font-medium mb-4 " +
+            "text-[10px] sm:text-[11px] uppercase tracking-[0.18em] font-medium mb-5 " +
             (plan.highlight ? "text-primary-foreground" : "text-foreground")
           }
         >
@@ -177,12 +179,12 @@ function PlanCard({ plan }: { plan: Plan }) {
         </p>
       )}
 
-      <ul className="space-y-4 flex-1">
+      <ul className="space-y-5 flex-1">
         {plan.features.map((feature, i) => (
-          <li key={i} className="flex gap-3 text-sm leading-relaxed">
+          <li key={i} className="flex gap-3 text-sm leading-[1.7]">
             <Check
               className={
-                "h-4 w-4 mt-0.5 shrink-0 " +
+                "h-4 w-4 mt-1 shrink-0 " +
                 (plan.highlight ? "text-primary-foreground" : "text-primary")
               }
               strokeWidth={2.5}
