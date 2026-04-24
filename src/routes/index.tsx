@@ -52,7 +52,7 @@ const structuringProjects: Plan[] = [
     name: "Reestruturação Operacional",
     price: "R$ 20.000",
     objective:
-      "Projeto de acompanhamento por 3 meses para mapear gargalos e redesenhar fluxos comerciais e técnicos.",
+      "Projeto de implantação e acompanhamento por 3 meses para mapear gargalos e redesenhar fluxos comerciais e técnicos.",
     features: [
       "Mapeamento completo de gargalos operacionais.",
       "Redesenho de fluxos comerciais e técnicos.",
