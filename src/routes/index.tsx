@@ -220,16 +220,16 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-14 sm:pt-20 md:pt-32 pb-12 sm:pb-16 md:pb-24">
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-20 sm:pt-28 md:pt-40 pb-16 sm:pb-24 md:pb-32">
         <div className="max-w-3xl">
-          <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-5 sm:mb-6 font-medium">
+          <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-primary mb-7 sm:mb-8 font-medium">
             Aceleração digital para cooperativas
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 sm:mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] mb-8 sm:mb-10">
             Tecnologia de ponta com{" "}
             <span className="text-primary">comunicação autêntica</span>.
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-10">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-[1.65] mb-10 sm:mb-12 max-w-2xl">
             Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos
             associados e reduza custos operacionais, a COOPBASE apresenta planos de
             aceleração digital e otimização de processos — desenhados exclusivamente
@@ -240,13 +240,13 @@ function Index() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-7 sm:px-8 py-3.5 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
             >
               Falar com a COOPBASE
             </a>
             <a
               href="#planos"
-              className="inline-flex items-center justify-center border border-border px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
+              className="inline-flex items-center justify-center border border-border px-7 sm:px-8 py-3.5 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
             >
               Ver planos
             </a>
