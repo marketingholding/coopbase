@@ -46,6 +46,7 @@ const recurringPlans: Plan[] = [
     features: [
       "Gestão de mídias sociais — planejamento, criação e publicação de 12 postagens estratégicas por mês.",
       "Cobertura audiovisual in loco — 5 horas mensais de captação profissional externa (vídeos e fotos) para registrar a força da sua cooperativa em ação.",
+      "Desenvolvimento de 1 landing page — página de conversão sob medida para a cooperativa.",
     ],
   },
   {
@@ -56,8 +57,8 @@ const recurringPlans: Plan[] = [
       "Transformar a presença digital em uma máquina de aquisição de novos cooperados e oportunidades comerciais.",
     inherits: "Tudo do plano Essencial, mais:",
     features: [
-      "Gestão de mídias sociais ampliada — 14 postagens estratégicas por mês.",
-      "*Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
+      "Gestão de mídias sociais ampliada — 16 postagens estratégicas por mês.",
+      "Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Estruturação de CRM — estruturação do funil de relacionamento e vendas para a equipe comercial.",
       "Desenvolvimento de até 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
       "Consultoria de processos — 1 sessão no primeiro mês para mapear e estruturar fluxos de trabalhos internos.",
@@ -72,38 +73,9 @@ const recurringPlans: Plan[] = [
       "Máximo alinhamento entre o volume de oportunidades geradas pelo marketing e a eficiência dos processos técnicos da equipe.",
     inherits: "Tudo do plano Tração, mais:",
     features: [
-      "Gestão de mídias sociais ampliada — 16 postagens estratégicas por mês.",
-      "Desenvolvimento de 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
-      "Consultoria e acompanhamento contínuo de processos técnicos — 3 meses (2 sessões mensais, 6 encontros) para otimizar fluxos de trabalho e garantir execução eficiente das operações.",
+      "Gestão de mídias sociais ampliada — 20 postagens estratégicas por mês.",
+      "Comitê Estratégico Mensal — encontros recorrentes para acompanhamento de processos e alinhamento estratégico contínuo.",
     ],
-  },
-];
-
-const projects: Plan[] = [
-  {
-    name: "Reestruturação Operacional",
-    price: "R$ 20.000",
-    priceSuffix: "projeto fechado",
-    objective:
-      "Identificar e eliminar as falhas nos processos técnicos de trabalho que impedem a sua cooperativa de escalar e operar com mais eficiência usando a mesma estrutura.",
-    features: [
-      "Mapeamento e diagnóstico — análise completa dos processos técnicos e fluxos de trabalho atuais, com identificação de gargalos operacionais.",
-      "Plano de resolução — redesenho de fluxos de trabalho e procedimentos internos visando agilidade, padronização e redução de custos.",
-      "Implementação assistida — 3 meses de acompanhamento lado a lado com a equipe técnica, incluindo 6 visitas estruturadas para validar a execução dos novos processos.",
-    ],
-  },
-  {
-    name: "Inovação & Inteligência Artificial",
-    price: "R$ 30.000",
-    priceSuffix: "projeto fechado",
-    objective:
-      "Levar a cooperativa para a vanguarda tecnológica. 77% dos tomadores de decisão já consideram que a IA agiliza drasticamente os processos internos.",
-    inherits: "Tudo da Solução A, mais:",
-    features: [
-      "Imersão profunda — 3 meses de acompanhamento intensivo nos processos técnicos, dobrando o suporte para 12 visitas estruturadas.",
-      "Implantação de IA — configuração de tecnologias de Inteligência Artificial sob medida para automação de processos internos, fluxos de dados e tarefas operacionais repetitivas, reduzindo trabalho manual e elevando a produtividade da equipe.",
-    ],
-    highlight: true,
   },
 ];
 
