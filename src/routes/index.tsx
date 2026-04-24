@@ -344,12 +344,37 @@ function Index() {
         </div>
       </section>
 
-      {/* Section 2 — Transformation proposal */}
+      {/* Section 2 — Structuring projects */}
+      <section id="projetos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
+        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
+          <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
+            <div className="flex items-center gap-4 mb-5 sm:mb-6">
+              <span className="text-sm font-semibold text-primary">02</span>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
+              Projetos de estruturação
+            </h2>
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              Projetos pontuais para diagnosticar, reestruturar e inovar a
+              operação da sua cooperativa — com entregas claras e prazos definidos.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
+            {structuringProjects.map((plan) => (
+              <PlanCard key={plan.name} plan={plan} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3 — Transformation proposal */}
       <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-32">
         <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
           <div className="max-w-3xl mb-10 sm:mb-12">
             <div className="flex items-center gap-4 mb-5 sm:mb-6">
-              <span className="text-sm font-semibold text-primary">02</span>
+              <span className="text-sm font-semibold text-primary">03</span>
               <span className="h-px flex-1 bg-border" />
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
