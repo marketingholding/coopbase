@@ -46,6 +46,7 @@ const recurringPlans: Plan[] = [
     features: [
       "Gestão de mídias sociais — planejamento, criação e publicação de 12 postagens estratégicas por mês.",
       "Cobertura audiovisual in loco — 5 horas mensais de captação profissional externa (vídeos e fotos) para registrar a força da sua cooperativa em ação.",
+      "Desenvolvimento de 1 landing page — página de conversão sob medida para a cooperativa.",
     ],
   },
   {
@@ -56,8 +57,8 @@ const recurringPlans: Plan[] = [
       "Transformar a presença digital em uma máquina de aquisição de novos cooperados e oportunidades comerciais.",
     inherits: "Tudo do plano Essencial, mais:",
     features: [
-      "Gestão de mídias sociais ampliada — 14 postagens estratégicas por mês.",
-      "*Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
+      "Gestão de mídias sociais ampliada — 16 postagens estratégicas por mês.",
+      "Gestão de mídia paga — estratégia e otimização de campanhas (Google Ads, Meta Ads) para captar leads qualificados.",
       "Estruturação de CRM — estruturação do funil de relacionamento e vendas para a equipe comercial.",
       "Desenvolvimento de até 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
       "Consultoria de processos — 1 sessão no primeiro mês para mapear e estruturar fluxos de trabalhos internos.",
@@ -72,38 +73,9 @@ const recurringPlans: Plan[] = [
       "Máximo alinhamento entre o volume de oportunidades geradas pelo marketing e a eficiência dos processos técnicos da equipe.",
     inherits: "Tudo do plano Tração, mais:",
     features: [
-      "Gestão de mídias sociais ampliada — 16 postagens estratégicas por mês.",
-      "Desenvolvimento de 10 landing pages — páginas de conversão dedicadas para diferentes públicos, campanhas ou serviços.",
-      "Consultoria e acompanhamento contínuo de processos técnicos — 3 meses (2 sessões mensais, 6 encontros) para otimizar fluxos de trabalho e garantir execução eficiente das operações.",
+      "Gestão de mídias sociais ampliada — 20 postagens estratégicas por mês.",
+      "Comitê Estratégico Mensal — encontros recorrentes para acompanhamento de processos e alinhamento estratégico contínuo.",
     ],
-  },
-];
-
-const projects: Plan[] = [
-  {
-    name: "Reestruturação Operacional",
-    price: "R$ 20.000",
-    priceSuffix: "projeto fechado",
-    objective:
-      "Identificar e eliminar as falhas nos processos técnicos de trabalho que impedem a sua cooperativa de escalar e operar com mais eficiência usando a mesma estrutura.",
-    features: [
-      "Mapeamento e diagnóstico — análise completa dos processos técnicos e fluxos de trabalho atuais, com identificação de gargalos operacionais.",
-      "Plano de resolução — redesenho de fluxos de trabalho e procedimentos internos visando agilidade, padronização e redução de custos.",
-      "Implementação assistida — 3 meses de acompanhamento lado a lado com a equipe técnica, incluindo 6 visitas estruturadas para validar a execução dos novos processos.",
-    ],
-  },
-  {
-    name: "Inovação & Inteligência Artificial",
-    price: "R$ 30.000",
-    priceSuffix: "projeto fechado",
-    objective:
-      "Levar a cooperativa para a vanguarda tecnológica. 77% dos tomadores de decisão já consideram que a IA agiliza drasticamente os processos internos.",
-    inherits: "Tudo da Solução A, mais:",
-    features: [
-      "Imersão profunda — 3 meses de acompanhamento intensivo nos processos técnicos, dobrando o suporte para 12 visitas estruturadas.",
-      "Implantação de IA — configuração de tecnologias de Inteligência Artificial sob medida para automação de processos internos, fluxos de dados e tarefas operacionais repetitivas, reduzindo trabalho manual e elevando a produtividade da equipe.",
-    ],
-    highlight: true,
   },
 ];
 
@@ -298,13 +270,13 @@ function Index() {
               </thead>
               <tbody className="text-sm">
                 {[
-                  { feature: "Postagens estratégicas mensais", values: ["12", "14", "16"] },
+                  { feature: "Postagens estratégicas mensais", values: ["12", "16", "20"] },
                   { feature: "Captação audiovisual in loco", values: ["5h/mês", "5h/mês", "5h/mês"] },
+                  { feature: "Desenvolvimento de landing pages", values: ["1 página", "Até 10 páginas", "Até 10 páginas"] },
                   { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                   { feature: "Estruturação de CRM", values: [false, true, true] },
-                  { feature: "Acompanhamento de processos (1º mês)", values: [false, "1 sessão", "1 sessão"] },
-                  { feature: "Desenvolvimento de landing pages", values: [false, "Até 10 páginas", "10 páginas"] },
-                  { feature: "Acompanhamento contínuo de processos técnicos", values: [false, false, "6 sessões em 3 meses"] },
+                  { feature: "Consultoria de processos (1º mês)", values: [false, "1 sessão", "1 sessão"] },
+                  { feature: "Comitê Estratégico Mensal", values: [false, false, true] },
                   { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-border last:border-0">
@@ -334,70 +306,33 @@ function Index() {
         </div>
       </section>
 
-      {/* CTA after comparison */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-24">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
-            Pronto para acelerar sua cooperativa?
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
-            Converse com nosso time pelo WhatsApp e descubra qual plano é o
-            ideal para o momento da sua cooperativa.
-          </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
-          >
-            Falar com a COOPBASE
-          </a>
-        </div>
-      </section>
-
-      {/* Section 2 — Projects */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-          <div className="flex items-center gap-4 mb-5 sm:mb-6">
-            <span className="text-sm font-semibold text-primary">02</span>
-            <span className="h-px flex-1 bg-border" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
-            Projetos de transformação e eficiência operacional
-          </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Consultorias de alto impacto para destravar gargalos nos processos
-            técnicos de trabalho. A adoção de ferramentas inteligentes e fluxos
-            automatizados atua como motor de crescimento, competitividade e
-            redução de custos reais para as operações da cooperativa.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 max-w-2xl lg:max-w-none mx-auto">
-          {projects.map((plan) => (
-            <PlanCard key={plan.name} plan={plan} />
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* Section 2 — Transformation proposal */}
       <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-32">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
-            Pronto para acelerar sua cooperativa?
-          </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
-            Converse com nosso time e descubra qual plano é o ideal para o
-            momento da sua cooperativa.
-          </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
-          >
-            Falar com a COOPBASE
-          </a>
+        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
+          <div className="max-w-3xl mb-10 sm:mb-12">
+            <div className="flex items-center gap-4 mb-5 sm:mb-6">
+              <span className="text-sm font-semibold text-primary">02</span>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+              Uma proposta de transformação para a sua cooperativa.
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
+              Mais do que marketing: a COOPBASE entrega um caminho estruturado
+              para profissionalizar a comunicação, atrair novos cooperados,
+              gerar negócios recorrentes e modernizar os processos internos da
+              sua operação. Vamos conversar sobre o momento da sua cooperativa
+              e construir, juntos, o plano certo para os próximos 12 meses.
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+            >
+              Falar com a COOPBASE
+            </a>
+          </div>
         </div>
       </section>
 
