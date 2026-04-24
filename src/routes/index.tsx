@@ -45,7 +45,7 @@ const structuringProjects: Plan[] = [
     features: [
       "Diagnóstico completo da operação atual.",
       "Identificação de gargalos e oportunidades de melhoria.",
-      "Recomendações estratégicas para os próximos passos.",
+      "Entrega de um plano de ação.",
     ],
   },
   {
