@@ -112,7 +112,7 @@ const recurringPlans: Plan[] = [
     inherits: "Tudo do plano Tração, mais:",
     features: [
       "Gestão de mídias sociais ampliada — 20 postagens estratégicas por mês.",
-      "Comitê Estratégico Mensal — encontros recorrentes para acompanhamento de processos e alinhamento estratégico contínuo.",
+      "Implantação de processos com I.A. — automações inteligentes para otimizar fluxos operacionais e ganhar produtividade.",
     ],
   },
 ];
