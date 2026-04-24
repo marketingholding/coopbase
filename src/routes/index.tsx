@@ -121,27 +121,29 @@ function PlanCard({ plan }: { plan: Plan }) {
   return (
     <div
       className={
-        "flex flex-col h-full rounded-lg border p-5 sm:p-6 lg:p-8 xl:p-10 transition-colors " +
+        "flex flex-col h-full rounded-lg border p-6 sm:p-8 lg:p-10 transition-colors " +
         (plan.highlight
           ? "bg-primary text-primary-foreground border-primary"
           : "bg-card text-card-foreground border-border hover:border-primary/40")
       }
     >
-      <div className="mb-5 sm:mb-6">
+      <div className="mb-8">
         <p
           className={
-            "text-[11px] sm:text-xs uppercase tracking-[0.2em] mb-2 sm:mb-3 " +
+            "text-[10px] sm:text-[11px] uppercase tracking-[0.24em] mb-3 font-medium " +
             (plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground")
           }
         >
           Plano
         </p>
-        <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold">{plan.name}</h3>
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight">
+          {plan.name}
+        </h3>
       </div>
 
-      <div className="mb-6 sm:mb-8">
+      <div className="mb-8 sm:mb-10">
         <div className="flex items-baseline gap-2 flex-wrap">
-          <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight">
+          <span className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
             {plan.price}
           </span>
           {plan.priceSuffix && (
@@ -159,7 +161,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
       <p
         className={
-          "text-sm leading-relaxed mb-8 " +
+          "text-sm leading-[1.7] mb-10 " +
           (plan.highlight ? "text-primary-foreground/85" : "text-muted-foreground")
         }
       >
@@ -169,7 +171,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       {plan.inherits && (
         <p
           className={
-            "text-xs uppercase tracking-wider font-medium mb-4 " +
+            "text-[10px] sm:text-[11px] uppercase tracking-[0.18em] font-medium mb-5 " +
             (plan.highlight ? "text-primary-foreground" : "text-foreground")
           }
         >
@@ -177,12 +179,12 @@ function PlanCard({ plan }: { plan: Plan }) {
         </p>
       )}
 
-      <ul className="space-y-4 flex-1">
+      <ul className="space-y-5 flex-1">
         {plan.features.map((feature, i) => (
-          <li key={i} className="flex gap-3 text-sm leading-relaxed">
+          <li key={i} className="flex gap-3 text-sm leading-[1.7]">
             <Check
               className={
-                "h-4 w-4 mt-0.5 shrink-0 " +
+                "h-4 w-4 mt-1 shrink-0 " +
                 (plan.highlight ? "text-primary-foreground" : "text-primary")
               }
               strokeWidth={2.5}
@@ -218,16 +220,16 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-14 sm:pt-20 md:pt-32 pb-12 sm:pb-16 md:pb-24">
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-20 sm:pt-28 md:pt-40 pb-16 sm:pb-24 md:pb-32">
         <div className="max-w-3xl">
-          <p className="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary mb-5 sm:mb-6 font-medium">
+          <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-primary mb-7 sm:mb-8 font-medium">
             Aceleração digital para cooperativas
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-6 sm:mb-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] mb-8 sm:mb-10">
             Tecnologia de ponta com{" "}
             <span className="text-primary">comunicação autêntica</span>.
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 sm:mb-10">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-[1.65] mb-10 sm:mb-12 max-w-2xl">
             Para que a sua cooperativa acompanhe o ritmo do mercado, atraia novos
             associados e reduza custos operacionais, a COOPBASE apresenta planos de
             aceleração digital e otimização de processos — desenhados exclusivamente
@@ -238,13 +240,13 @@ function Index() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-7 sm:px-8 py-3.5 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
             >
               Falar com a COOPBASE
             </a>
             <a
               href="#planos"
-              className="inline-flex items-center justify-center border border-border px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
+              className="inline-flex items-center justify-center border border-border px-7 sm:px-8 py-3.5 sm:py-4 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors"
             >
               Ver planos
             </a>
@@ -253,16 +255,18 @@ function Index() {
       </section>
 
       {/* Section 1 — Structuring projects */}
-      <section id="projetos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-          <div className="flex items-center gap-4 mb-5 sm:mb-6">
-            <span className="text-sm font-semibold text-primary">01</span>
+      <section id="projetos" className="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-24 md:py-32">
+        <div className="max-w-3xl mb-14 sm:mb-16 md:mb-20">
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-primary">
+              01 — Projetos
+            </span>
             <span className="h-px flex-1 bg-border" />
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
             Projetos de estruturação
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground leading-[1.65] max-w-2xl">
             Projetos pontuais para diagnosticar, reestruturar e inovar a
             operação da sua cooperativa — com entregas claras e prazos definidos.
           </p>
@@ -276,17 +280,19 @@ function Index() {
       </section>
 
       {/* Section 2 — Recurring plans */}
-      <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
-          <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-            <div className="flex items-center gap-4 mb-5 sm:mb-6">
-              <span className="text-sm font-semibold text-primary">02</span>
+      <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-24 md:py-32">
+        <div className="border-t border-border pt-20 sm:pt-24 md:pt-32">
+          <div className="max-w-3xl mb-14 sm:mb-16 md:mb-20">
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-primary">
+                02 — Recorrência
+              </span>
               <span className="h-px flex-1 bg-border" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
               Planos de aceleração contínua
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-[1.65] max-w-2xl">
               Contratos de 12 meses com soluções focadas em construir autoridade
               digital, atrair cooperados e gerar negócios recorrentes.
             </p>
@@ -299,12 +305,12 @@ function Index() {
           </div>
 
           {/* Comparison table */}
-          <div className="mt-16 sm:mt-20 md:mt-24">
-            <div className="max-w-3xl mb-8 sm:mb-10">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+          <div className="mt-24 sm:mt-28 md:mt-32">
+            <div className="max-w-3xl mb-10 sm:mb-12">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                 Compare os planos
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-[1.65] max-w-2xl">
                 Veja em um relance o que está incluso em cada plano recorrente.
               </p>
             </div>
@@ -313,20 +319,20 @@ function Index() {
               <table className="w-full min-w-[640px] border-collapse text-left">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="py-4 sm:py-5 pr-4 text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="py-5 sm:py-6 pr-4 text-[10px] sm:text-[11px] font-medium text-muted-foreground uppercase tracking-[0.18em]">
                       Recursos
                     </th>
-                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                    <th className="py-5 sm:py-6 px-3 sm:px-4 text-center">
                       <div className="text-sm sm:text-base font-semibold">Essencial</div>
-                      <div className="text-xs text-muted-foreground mt-1">R$ 4.000/mês</div>
+                      <div className="text-xs text-muted-foreground mt-1.5">R$ 4.000/mês</div>
                     </th>
-                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center bg-primary/5 border-x border-primary/20">
+                    <th className="py-5 sm:py-6 px-3 sm:px-4 text-center bg-primary/[0.04] border-x border-primary/20">
                       <div className="text-sm sm:text-base font-semibold text-primary">Tração</div>
-                      <div className="text-xs text-muted-foreground mt-1">R$ 8.000/mês</div>
+                      <div className="text-xs text-muted-foreground mt-1.5">R$ 8.000/mês</div>
                     </th>
-                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                    <th className="py-5 sm:py-6 px-3 sm:px-4 text-center">
                       <div className="text-sm sm:text-base font-semibold">Performance</div>
-                      <div className="text-xs text-muted-foreground mt-1">R$ 12.000/mês</div>
+                      <div className="text-xs text-muted-foreground mt-1.5">R$ 12.000/mês</div>
                     </th>
                   </tr>
                 </thead>
@@ -337,18 +343,17 @@ function Index() {
                     { feature: "Desenvolvimento de landing pages", values: ["1 página", "Até 10 páginas", "Até 10 páginas"] },
                     { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                     { feature: "Estruturação de CRM", values: [false, true, true] },
-                    
                     { feature: "Implantação de processos com I.A.", values: [false, false, true] },
                     { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                   ].map((row, i) => (
                     <tr key={i} className="border-b border-border last:border-0">
-                      <td className="py-4 pr-4 text-foreground/90">{row.feature}</td>
+                      <td className="py-5 pr-4 text-foreground/90">{row.feature}</td>
                       {row.values.map((val, j) => (
                         <td
                           key={j}
                           className={
-                            "py-4 px-3 sm:px-4 text-center " +
-                            (j === 1 ? "bg-primary/5 border-x border-primary/20" : "")
+                            "py-5 px-3 sm:px-4 text-center " +
+                            (j === 1 ? "bg-primary/[0.04] border-x border-primary/20" : "")
                           }
                         >
                           {val === true ? (
@@ -370,17 +375,19 @@ function Index() {
       </section>
 
       {/* Section 3 — Transformation proposal */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-32">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
-          <div className="max-w-3xl mb-10 sm:mb-12">
-            <div className="flex items-center gap-4 mb-5 sm:mb-6">
-              <span className="text-sm font-semibold text-primary">03</span>
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-28 md:py-40">
+        <div className="border-t border-border pt-20 sm:pt-24 md:pt-32">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-primary">
+                03 — Próximo passo
+              </span>
               <span className="h-px flex-1 bg-border" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight mb-7 sm:mb-8 leading-[1.05]">
               Uma proposta de transformação para a sua cooperativa.
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-10 sm:mb-12 leading-[1.65] max-w-2xl">
               Mais do que marketing: a COOPBASE entrega um caminho estruturado
               para profissionalizar a comunicação, atrair novos cooperados,
               gerar negócios recorrentes e modernizar os processos internos da
@@ -391,15 +398,13 @@ function Index() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-7 sm:px-8 py-3.5 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
             >
               Falar com a COOPBASE
             </a>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
       <footer className="border-t border-border">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 py-6 sm:py-8 flex items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-muted-foreground">COOPBASE @ 2026</p>
