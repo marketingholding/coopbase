@@ -113,6 +113,7 @@ const recurringPlans: Plan[] = [
       "Gestão de tráfego avançada com otimização de conversão (CRO).",
       "Automação de E-mail Marketing.",
       "Dashboards de Business Intelligence (BI).",
+      "Comitê estratégico de crescimento (1x ao mês).",
     ],
   },
 ];
