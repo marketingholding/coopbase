@@ -255,16 +255,18 @@ function Index() {
       </section>
 
       {/* Section 1 — Structuring projects */}
-      <section id="projetos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-          <div className="flex items-center gap-4 mb-5 sm:mb-6">
-            <span className="text-sm font-semibold text-primary">01</span>
+      <section id="projetos" className="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-24 md:py-32">
+        <div className="max-w-3xl mb-14 sm:mb-16 md:mb-20">
+          <div className="flex items-center gap-4 mb-6 sm:mb-8">
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-primary">
+              01 — Projetos
+            </span>
             <span className="h-px flex-1 bg-border" />
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
             Projetos de estruturação
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground leading-[1.65] max-w-2xl">
             Projetos pontuais para diagnosticar, reestruturar e inovar a
             operação da sua cooperativa — com entregas claras e prazos definidos.
           </p>
@@ -278,17 +280,19 @@ function Index() {
       </section>
 
       {/* Section 2 — Recurring plans */}
-      <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
-          <div className="max-w-3xl mb-10 sm:mb-12 md:mb-16">
-            <div className="flex items-center gap-4 mb-5 sm:mb-6">
-              <span className="text-sm font-semibold text-primary">02</span>
+      <section id="planos" className="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-24 md:py-32">
+        <div className="border-t border-border pt-20 sm:pt-24 md:pt-32">
+          <div className="max-w-3xl mb-14 sm:mb-16 md:mb-20">
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-primary">
+                02 — Recorrência
+              </span>
               <span className="h-px flex-1 bg-border" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
               Planos de aceleração contínua
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-[1.65] max-w-2xl">
               Contratos de 12 meses com soluções focadas em construir autoridade
               digital, atrair cooperados e gerar negócios recorrentes.
             </p>
@@ -301,12 +305,12 @@ function Index() {
           </div>
 
           {/* Comparison table */}
-          <div className="mt-16 sm:mt-20 md:mt-24">
-            <div className="max-w-3xl mb-8 sm:mb-10">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+          <div className="mt-24 sm:mt-28 md:mt-32">
+            <div className="max-w-3xl mb-10 sm:mb-12">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                 Compare os planos
               </h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-[1.65] max-w-2xl">
                 Veja em um relance o que está incluso em cada plano recorrente.
               </p>
             </div>
@@ -315,20 +319,20 @@ function Index() {
               <table className="w-full min-w-[640px] border-collapse text-left">
                 <thead>
                   <tr className="border-b border-border">
-                    <th className="py-4 sm:py-5 pr-4 text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                    <th className="py-5 sm:py-6 pr-4 text-[10px] sm:text-[11px] font-medium text-muted-foreground uppercase tracking-[0.18em]">
                       Recursos
                     </th>
-                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                    <th className="py-5 sm:py-6 px-3 sm:px-4 text-center">
                       <div className="text-sm sm:text-base font-semibold">Essencial</div>
-                      <div className="text-xs text-muted-foreground mt-1">R$ 4.000/mês</div>
+                      <div className="text-xs text-muted-foreground mt-1.5">R$ 4.000/mês</div>
                     </th>
-                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center bg-primary/5 border-x border-primary/20">
+                    <th className="py-5 sm:py-6 px-3 sm:px-4 text-center bg-primary/[0.04] border-x border-primary/20">
                       <div className="text-sm sm:text-base font-semibold text-primary">Tração</div>
-                      <div className="text-xs text-muted-foreground mt-1">R$ 8.000/mês</div>
+                      <div className="text-xs text-muted-foreground mt-1.5">R$ 8.000/mês</div>
                     </th>
-                    <th className="py-4 sm:py-5 px-3 sm:px-4 text-center">
+                    <th className="py-5 sm:py-6 px-3 sm:px-4 text-center">
                       <div className="text-sm sm:text-base font-semibold">Performance</div>
-                      <div className="text-xs text-muted-foreground mt-1">R$ 12.000/mês</div>
+                      <div className="text-xs text-muted-foreground mt-1.5">R$ 12.000/mês</div>
                     </th>
                   </tr>
                 </thead>
@@ -339,18 +343,17 @@ function Index() {
                     { feature: "Desenvolvimento de landing pages", values: ["1 página", "Até 10 páginas", "Até 10 páginas"] },
                     { feature: "Gestão de mídia paga (Google e Meta Ads)", values: [false, true, true] },
                     { feature: "Estruturação de CRM", values: [false, true, true] },
-                    
                     { feature: "Implantação de processos com I.A.", values: [false, false, true] },
                     { feature: "Contrato", values: ["12 meses", "12 meses", "12 meses"] },
                   ].map((row, i) => (
                     <tr key={i} className="border-b border-border last:border-0">
-                      <td className="py-4 pr-4 text-foreground/90">{row.feature}</td>
+                      <td className="py-5 pr-4 text-foreground/90">{row.feature}</td>
                       {row.values.map((val, j) => (
                         <td
                           key={j}
                           className={
-                            "py-4 px-3 sm:px-4 text-center " +
-                            (j === 1 ? "bg-primary/5 border-x border-primary/20" : "")
+                            "py-5 px-3 sm:px-4 text-center " +
+                            (j === 1 ? "bg-primary/[0.04] border-x border-primary/20" : "")
                           }
                         >
                           {val === true ? (
@@ -372,17 +375,19 @@ function Index() {
       </section>
 
       {/* Section 3 — Transformation proposal */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-20 md:py-32">
-        <div className="border-t border-border pt-12 sm:pt-16 md:pt-20">
-          <div className="max-w-3xl mb-10 sm:mb-12">
-            <div className="flex items-center gap-4 mb-5 sm:mb-6">
-              <span className="text-sm font-semibold text-primary">03</span>
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-20 sm:py-28 md:py-40">
+        <div className="border-t border-border pt-20 sm:pt-24 md:pt-32">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-4 mb-6 sm:mb-8">
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-medium text-primary">
+                03 — Próximo passo
+              </span>
               <span className="h-px flex-1 bg-border" />
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tight mb-5 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight mb-7 sm:mb-8 leading-[1.05]">
               Uma proposta de transformação para a sua cooperativa.
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-10 sm:mb-12 leading-[1.65] max-w-2xl">
               Mais do que marketing: a COOPBASE entrega um caminho estruturado
               para profissionalizar a comunicação, atrair novos cooperados,
               gerar negócios recorrentes e modernizar os processos internos da
@@ -393,15 +398,13 @@ function Index() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-7 sm:px-8 py-3.5 sm:py-4 text-sm font-medium rounded-md hover:bg-primary/90 transition-colors"
             >
               Falar com a COOPBASE
             </a>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
       <footer className="border-t border-border">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 py-6 sm:py-8 flex items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-muted-foreground">COOPBASE @ 2026</p>
