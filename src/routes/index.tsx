@@ -45,18 +45,18 @@ const structuringProjects: Plan[] = [
     features: [
       "Diagnóstico completo da operação atual.",
       "Identificação de gargalos e oportunidades de melhoria.",
-      "Entrega de um Plano de Ação (Roadmap) detalhado para a cooperativa.",
+      "Entrega de um Plano de Ação (Roadmap) para a cooperativa.",
     ],
   },
   {
-    name: "Reestruturação Operacional",
+    name: "Reestruturação",
     price: "R$ 10.000",
     objective:
       "Projeto de implantação e acompanhamento por 3 meses para mapear gargalos e redesenhar fluxos comerciais e técnicos.",
     features: [
       "Mapeamento completo de gargalos operacionais.",
       "Redesenho de fluxos comerciais e técnicos.",
-      "6 encontros ao longo de 3 meses para implementação acompanhada.",
+      "Encontros quinzenais para implementação assistida.",
     ],
     highlight: true,
   },
