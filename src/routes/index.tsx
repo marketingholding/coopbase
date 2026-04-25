@@ -203,7 +203,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         <p
           className={
             "text-[13px] font-medium mb-5 " +
-            (isHighlight ? "text-background" : "text-foreground")
+            (isHighlight ? "text-primary-foreground" : "text-foreground")
           }
         >
           {plan.inherits}
