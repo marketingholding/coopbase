@@ -64,7 +64,7 @@ const structuringProjects: Plan[] = [
     name: "Inovação & IA",
     price: "R$ 20.000",
     objective:
-      "Upgrade do projeto de reestruturação com implantação de automações de Inteligência Artificial para ganho de produtividade.",
+      "Upgrade do projeto de reestruturação com implantação de automações com Inteligência Artificial para ganho de produtividade.",
     inherits: "Tudo da Reestruturação Operacional, mais:",
     features: [
       "3 meses de acompanhamento com encontros semanais.",
