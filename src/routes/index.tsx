@@ -181,7 +181,7 @@ function PlanCard({ plan }: { plan: Plan }) {
             <span
               className={
                 "text-sm " +
-                (isHighlight ? "text-background/60" : "text-muted-foreground")
+                (isHighlight ? "text-primary-foreground/60" : "text-muted-foreground")
               }
             >
               {plan.priceSuffix}
