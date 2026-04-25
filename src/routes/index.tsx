@@ -254,23 +254,23 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Top nav — Apple-style: thin, blurred, centered */}
-      <header className="sticky top-0 z-40 backdrop-blur-xl bg-primary/95 border-b border-primary-foreground/10">
+      <header className="sticky top-0 z-40 backdrop-blur-xl bg-primary/95 border-b border-primary-foreground/10 my-0 py-[16px]">
         <div className="max-w-[1024px] mx-auto px-6 h-12 flex items-center justify-between">
           <a href="#top" className="flex items-center">
             <img src={logoWhite} alt="COOPBASE" className="h-10 w-auto" />
           </a>
           <nav className="hidden sm:flex items-center gap-8 text-[13px] text-primary-foreground/80">
-            <a href="#projetos" className="hover:text-primary-foreground transition-colors">
+            <a href="#projetos" className="hover:text-primary-foreground transition-colors text-lg">
               Projetos
             </a>
-            <a href="#planos" className="hover:text-primary-foreground transition-colors">
+            <a href="#planos" className="hover:text-primary-foreground transition-colors text-lg">
               Planos
             </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary-foreground transition-colors"
+              className="hover:text-primary-foreground transition-colors text-lg"
             >
               Contato
             </a>
