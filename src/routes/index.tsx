@@ -325,6 +325,23 @@ function Index() {
           </div>
         </div>
       </section>
+      
+      <section id="gestor" className="bg-muted/40 py-24 sm:py-32 md:py-40">
+        <div className="max-w-[1024px] mx-auto px-6">
+          <div className="text-center mb-16 sm:mb-20">
+            <SectionEyebrow label="Projetos" />
+            <h2 className="text-3xl sm:text-5xl md:text-[56px] font-semibold tracking-[-0.04em] leading-[1.05] mb-5">
+              Quer um gestor de processos?
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground leading-[1.4] max-w-xl mx-auto">
+              Fornecemos serviços de recorrência para gestão de processos por 12 meses.
+            </p>
+             <PillButton href={WHATSAPP_URL} external>
+              Solicitar meu gestor
+            </PillButton>
+          </div>
+        </div>
+      </section>
 
       {/* Section 2 — Recurring plans */}
       <section id="planos" className="py-24 sm:py-32 md:py-40">
