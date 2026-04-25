@@ -216,7 +216,7 @@ function PlanCard({ plan }: { plan: Plan }) {
             <Check
               className={
                 "h-[18px] w-[18px] mt-1 shrink-0 " +
-                (isHighlight ? "text-background" : "text-primary")
+                (isHighlight ? "text-primary-foreground" : "text-primary")
               }
               strokeWidth={2.5}
             />
