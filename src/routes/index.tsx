@@ -164,7 +164,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       className={
         "flex flex-col h-full rounded-3xl p-8 sm:p-10 transition-all duration-300 " +
         (isHighlight
-          ? "bg-foreground text-background"
+          ? "bg-primary text-primary-foreground"
           : "bg-background text-foreground border border-border/60")
       }
     >
@@ -181,7 +181,7 @@ function PlanCard({ plan }: { plan: Plan }) {
             <span
               className={
                 "text-sm " +
-                (isHighlight ? "text-background/60" : "text-muted-foreground")
+                (isHighlight ? "text-primary-foreground/60" : "text-muted-foreground")
               }
             >
               {plan.priceSuffix}
@@ -193,7 +193,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       <p
         className={
           "text-[15px] leading-[1.55] mb-10 " +
-          (isHighlight ? "text-background/75" : "text-muted-foreground")
+          (isHighlight ? "text-primary-foreground/75" : "text-muted-foreground")
         }
       >
         {plan.objective}
@@ -203,7 +203,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         <p
           className={
             "text-[13px] font-medium mb-5 " +
-            (isHighlight ? "text-background" : "text-foreground")
+            (isHighlight ? "text-primary-foreground" : "text-foreground")
           }
         >
           {plan.inherits}
@@ -216,13 +216,13 @@ function PlanCard({ plan }: { plan: Plan }) {
             <Check
               className={
                 "h-[18px] w-[18px] mt-1 shrink-0 " +
-                (isHighlight ? "text-background" : "text-primary")
+                (isHighlight ? "text-primary-foreground" : "text-primary")
               }
               strokeWidth={2.5}
             />
             <span
               className={
-                isHighlight ? "text-background/85" : "text-foreground/80"
+                isHighlight ? "text-primary-foreground/85" : "text-foreground/80"
               }
             >
               {feature}
@@ -238,7 +238,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         className={
           "inline-flex items-center justify-center w-full px-5 py-3 text-[15px] font-medium rounded-full transition-all " +
           (isHighlight
-            ? "bg-background text-foreground hover:opacity-90"
+            ? "bg-background text-primary hover:opacity-90"
             : "bg-primary text-primary-foreground hover:opacity-90")
         }
       >
