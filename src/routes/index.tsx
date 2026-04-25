@@ -83,7 +83,7 @@ const recurringPlans: Plan[] = [
       "Profissionalizar a presença digital da cooperativa e criar uma vitrine atrativa para a comunidade.",
     features: [
       "Gestão de mídias sociais — planejamento, criação e publicação de 12 postagens estratégicas por mês.",
-      "Cobertura audiovisual in loco — 5 horas mensais de captação profissional externa (vídeos e fotos) para registrar a força da sua cooperativa em ação.",
+      "Cobertura audiovisual in loco — 5 horas mensais de captação profissional (vídeos e fotos) para registrar a força da sua cooperativa em ação.",
       "Desenvolvimento de 1 landing page — página de conversão sob medida para a cooperativa.",
     ],
   },
@@ -297,8 +297,8 @@ function Index() {
             <PillButton href={WHATSAPP_URL} external>
               Falar com a COOPBASE
             </PillButton>
-            <PillButton href="#planos" variant="ghost">
-              Ver planos
+            <PillButton href="#projetos" variant="ghost">
+              Ver projetos
             </PillButton>
           </div>
         </div>
@@ -335,8 +335,8 @@ function Index() {
               Planos de aceleração contínua.
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground leading-[1.4] max-w-xl mx-auto">
-              Contratos de 12 meses para construir autoridade, atrair cooperados
-              e gerar negócios recorrentes.
+              Construa autoridade, atraia cooperados
+              e gere negócios recorrentes.
             </p>
           </div>
 
@@ -360,14 +360,14 @@ function Index() {
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground leading-[1.4] mb-10 max-w-xl mx-auto">
             Vamos conversar sobre o seu momento e construir, juntos, o plano
-            certo para os próximos 12 meses.
+            certo seu crescimento.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
             <PillButton href={WHATSAPP_URL} external>
               Falar com a COOPBASE
             </PillButton>
-            <PillButton href="#planos" variant="ghost">
-              Rever planos
+            <PillButton href="#projetos" variant="ghost">
+              Rever projetos
             </PillButton>
           </div>
         </div>
