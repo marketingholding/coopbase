@@ -164,7 +164,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       className={
         "flex flex-col h-full rounded-3xl p-8 sm:p-10 transition-all duration-300 " +
         (isHighlight
-          ? "bg-foreground text-background"
+          ? "bg-primary text-primary-foreground"
           : "bg-background text-foreground border border-border/60")
       }
     >
