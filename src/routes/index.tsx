@@ -222,7 +222,7 @@ function PlanCard({ plan }: { plan: Plan }) {
             />
             <span
               className={
-                isHighlight ? "text-background/85" : "text-foreground/80"
+                isHighlight ? "text-primary-foreground/85" : "text-foreground/80"
               }
             >
               {feature}
