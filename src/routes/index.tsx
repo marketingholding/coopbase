@@ -193,7 +193,7 @@ function PlanCard({ plan }: { plan: Plan }) {
       <p
         className={
           "text-[15px] leading-[1.55] mb-10 " +
-          (isHighlight ? "text-background/75" : "text-muted-foreground")
+          (isHighlight ? "text-primary-foreground/75" : "text-muted-foreground")
         }
       >
         {plan.objective}
