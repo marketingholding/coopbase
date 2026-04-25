@@ -67,7 +67,7 @@ const structuringProjects: Plan[] = [
       "Upgrade do projeto de reestruturação com implantação de automações de Inteligência Artificial para ganho de produtividade.",
     inherits: "Tudo da Reestruturação Operacional, mais:",
     features: [
-      "3 meses de acompanhamento com 12 encontros.",
+      "3 meses de acompanhamento com encontros semanais.",
       "Implantação de automações com Inteligência Artificial.",
       "Treinamento e capacitação da equipe técnica para operar o novo ecossistema automatizado.",
     ],
