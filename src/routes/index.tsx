@@ -257,7 +257,7 @@ function Index() {
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-primary/95 border-b border-primary-foreground/10">
         <div className="max-w-[1024px] mx-auto px-6 h-12 flex items-center justify-between">
           <a href="#top" className="flex items-center">
-            <img src={logoWhite} alt="COOPBASE" className="h-5 w-auto" />
+            <img src={logoWhite} alt="COOPBASE" className="h-10 w-auto" />
           </a>
           <nav className="hidden sm:flex items-center gap-8 text-[13px] text-primary-foreground/80">
             <a href="#projetos" className="hover:text-primary-foreground transition-colors">
@@ -374,12 +374,12 @@ function Index() {
       </section>
 
       {/* Footer — minimal, like apple.com */}
-      <footer className="bg-muted/40 border-t border-border/40">
+      <footer className="bg-primary/95 border-t border-primary-foreground/10">
         <div className="max-w-[1024px] mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="COOPBASE" className="h-5 w-auto opacity-70" />
+            <img src={logoWhite} alt="COOPBASE" className="h-10 w-auto" />
           </div>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-primary-foreground/80">
             Copyright © 2026 COOPBASE. Todos os direitos reservados.
           </p>
         </div>
