@@ -52,7 +52,7 @@ const structuringProjects: Plan[] = [
     name: "Reestruturação",
     price: "R$ 10.000",
     objective:
-      "Projeto de implantação e acompanhamento por 3 meses para mapear gargalos e redesenhar fluxos comerciais e técnicos.",
+      "Projeto de implantação e acompanhamento por 90 dias para mapear gargalos e redesenhar fluxos comerciais e técnicos.",
     features: [
       "Mapeamento completo de gargalos operacionais.",
       "Redesenho de fluxos comerciais e técnicos.",
@@ -67,7 +67,7 @@ const structuringProjects: Plan[] = [
       "Upgrade do projeto de reestruturação com implantação de automações com Inteligência Artificial para ganho de produtividade.",
     inherits: "Tudo da Reestruturação Operacional, mais:",
     features: [
-      "3 meses de acompanhamento com encontros semanais.",
+      "90 dias de acompanhamento com encontros semanais.",
       "Implantação de automações com Inteligência Artificial.",
       "Treinamento e capacitação da equipe técnica para operar o novo ecossistema automatizado.",
     ],
