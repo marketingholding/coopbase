@@ -165,7 +165,7 @@ function PlanCard({ plan }: { plan: Plan }) {
         "flex flex-col h-full rounded-3xl p-8 sm:p-10 transition-all duration-300 " +
         (isHighlight
           ? "bg-primary text-primary-foreground"
-          : "bg-background text-foreground border-2 border-primary")
+          : "bg-background text-foreground border border-border/60")
       }
     >
       <h3 className="text-xl sm:text-2xl font-semibold tracking-tight mb-6">
