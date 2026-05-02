@@ -45,7 +45,7 @@ function PillButton({
   children: React.ReactNode;
 }) {
   const base =
-    "inline-flex items-center justify-center px-7 py-3.5 text-[15px] font-medium rounded-full transition-all duration-200";
+    "inline-flex items-center justify-center px-7 py-3.5 text-[15px] font-medium rounded-2 transition-all duration-200";
   const styles =
     variant === "primary"
       ? "bg-primary text-primary-foreground hover:opacity-90"
@@ -292,9 +292,6 @@ function Index() {
             Tecnologia de ponta com comunicação autêntica.
             Pensada para a realidade do cooperativismo.
           </p>
-          <PillButton href={WHATSAPP_URL} external>
-            Conversar com a COOPBASE
-          </PillButton>
         </div>
       </section>
 
