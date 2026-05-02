@@ -254,25 +254,26 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="sticky top-0 z-40 backdrop-blur-xl bg-primary/95 border-b border-primary-foreground/10 py-[16px]">
-        <div className="max-w-[1200px] mx-auto px-6 h-12 flex items-center justify-between">
-          <a href="#top" className="flex items-center">
-            <img src={logoWhite} alt="COOPBASE" className="h-10 w-auto" />
+      <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/70 border-b border-foreground/5">
+        <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+          <a href="#top" className="flex items-center" aria-label="COOPBASE">
+            <img src={logo} alt="COOPBASE" className="h-7 w-auto" />
           </a>
-          <nav className="hidden sm:flex items-center gap-8 text-primary-foreground/80">
-            <a href="#estruturacao" className="hover:text-primary-foreground transition-colors text-base">
+          <nav className="hidden sm:flex items-center gap-10 text-[13px] font-medium tracking-[-0.01em] text-foreground/60">
+            <a href="#estruturacao" className="hover:text-foreground transition-colors">
               Estruturação
             </a>
-            <a href="#recorrencia" className="hover:text-primary-foreground transition-colors text-base">
+            <a href="#recorrencia" className="hover:text-foreground transition-colors">
               Recorrência
             </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-primary-foreground transition-colors text-base"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-foreground text-background hover:opacity-90 transition-opacity"
             >
-              Contato
+              Falar agora
+              <span aria-hidden>→</span>
             </a>
           </nav>
         </div>
