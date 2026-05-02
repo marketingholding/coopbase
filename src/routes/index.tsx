@@ -261,10 +261,10 @@ function Index() {
             <img src={logo} alt="COOPBASE" className="h-7 w-auto" />
           </a>
           <nav className="hidden sm:flex items-center gap-10 text-[13px] font-medium tracking-[-0.01em] text-black">
-            <a href="#estruturacao">
+            <a href="#estruturacao" className="text-white">
               Estruturação
             </a>
-            <a href="#recorrencia">
+            <a href="#recorrencia" className="text-white">
               Recorrência
             </a>
             <a
