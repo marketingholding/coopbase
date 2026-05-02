@@ -260,18 +260,18 @@ function Index() {
           <a href="#top" className="flex items-center" aria-label="COOPBASE">
             <img src={logo} alt="COOPBASE" className="h-7 w-auto" />
           </a>
-          <nav className="hidden sm:flex items-center gap-10 text-[13px] font-medium tracking-[-0.01em] text-white">
-            <a href="#estruturacao" className="hover:text-foreground transition-colors">
+          <nav className="hidden sm:flex items-center gap-10 text-[13px] font-medium tracking-[-0.01em] text-black">
+            <a href="#estruturacao">
               Estruturação
             </a>
-            <a href="#recorrencia" className="hover:text-foreground transition-colors">
+            <a href="#recorrencia">
               Recorrência
             </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-background hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black"
             >
               Falar agora
               <span aria-hidden>→</span>
