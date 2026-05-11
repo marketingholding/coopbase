@@ -405,13 +405,13 @@ function Index() {
 
       {/* CTA final */}
       <section className="py-32 sm:py-40 lg:py-56">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+        <div className="max-w-[1200px] mx-auto px-6 text-left lg:text-center">
           <h2 className="text-4xl sm:text-6xl lg:text-[88px] font-semibold tracking-[-0.045em] leading-[1.02] mb-10">
             Pronto para a próxima fase
             <br />
             <span className="text-primary">da sua cooperativa?</span>
           </h2>
-          <p className="text-lg sm:text-xl text-foreground/60 leading-[1.4] mb-12 max-w-xl mx-auto">
+          <p className="text-lg sm:text-xl text-foreground/60 leading-[1.4] mb-12 max-w-xl lg:mx-auto">
             Vamos conversar sobre o seu momento e construir, juntos, o plano
             certo para o seu crescimento.
           </p>
