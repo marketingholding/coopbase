@@ -231,8 +231,8 @@ function NarrativePanel({ panel, index }: { panel: Panel; index: number }) {
             </PillButton>
           </div>
 
-          {/* Visual */}
-          <div className="lg:w-1/2 flex items-center justify-center">
+          {/* Visual — apenas desktop */}
+          <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
             <img
               src={panel.image}
               alt={panel.alt}
