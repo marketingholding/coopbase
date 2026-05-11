@@ -361,7 +361,7 @@ function Index() {
 
       {/* Painel de quebra — verde institucional */}
       <section className="bg-primary text-primary-foreground py-32 sm:py-40 lg:py-56">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+        <div className="max-w-[1200px] mx-auto px-6 text-left lg:text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-primary-foreground/70 mb-8">
             Da estruturação à escala
           </p>
