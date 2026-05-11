@@ -339,13 +339,13 @@ function Index() {
 
       {/* Hero */}
       <section id="top" className="relative overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-6 pt-32 sm:pt-40 md:pt-48 pb-32 sm:pb-40 md:pb-48 text-center">
+        <div className="max-w-[1200px] mx-auto px-6 pt-32 sm:pt-40 md:pt-48 pb-32 sm:pb-40 md:pb-48 text-left lg:text-center">
           <h1 className="text-5xl sm:text-7xl md:text-[96px] font-semibold tracking-[-0.045em] leading-[1.02] mb-8">
             Aceleração digital
             <br />
             <span className="text-primary">para cooperativas.</span>
           </h1>
-          <p className="text-xl sm:text-2xl md:text-[26px] text-foreground/60 leading-[1.35] max-w-2xl mx-auto mb-12 font-normal tracking-[-0.02em]">
+          <p className="text-xl sm:text-2xl md:text-[26px] text-foreground/60 leading-[1.35] max-w-2xl lg:mx-auto mb-12 font-normal tracking-[-0.02em]">
             Tecnologia de ponta com comunicação autêntica.
             Pensada para a realidade do cooperativismo.
           </p>
