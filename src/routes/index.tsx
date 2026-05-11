@@ -231,8 +231,8 @@ function NarrativePanel({ panel, index }: { panel: Panel; index: number }) {
             </PillButton>
           </div>
 
-          {/* Visual */}
-          <div className="lg:w-1/2 flex items-center justify-center">
+          {/* Visual — apenas desktop */}
+          <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
             <img
               src={panel.image}
               alt={panel.alt}
@@ -339,13 +339,13 @@ function Index() {
 
       {/* Hero */}
       <section id="top" className="relative overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-6 pt-32 sm:pt-40 md:pt-48 pb-32 sm:pb-40 md:pb-48 text-center">
+        <div className="max-w-[1200px] mx-auto px-6 pt-32 sm:pt-40 md:pt-48 pb-32 sm:pb-40 md:pb-48 text-left lg:text-center">
           <h1 className="text-5xl sm:text-7xl md:text-[96px] font-semibold tracking-[-0.045em] leading-[1.02] mb-8">
             Aceleração digital
             <br />
             <span className="text-primary">para cooperativas.</span>
           </h1>
-          <p className="text-xl sm:text-2xl md:text-[26px] text-foreground/60 leading-[1.35] max-w-2xl mx-auto mb-12 font-normal tracking-[-0.02em]">
+          <p className="text-xl sm:text-2xl md:text-[26px] text-foreground/60 leading-[1.35] max-w-2xl lg:mx-auto mb-12 font-normal tracking-[-0.02em]">
             Tecnologia de ponta com comunicação autêntica.
             Pensada para a realidade do cooperativismo.
           </p>
@@ -361,7 +361,7 @@ function Index() {
 
       {/* Painel de quebra — verde institucional */}
       <section className="bg-primary text-primary-foreground py-32 sm:py-40 lg:py-56">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+        <div className="max-w-[1200px] mx-auto px-6 text-left lg:text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-primary-foreground/70 mb-8">
             Da estruturação à escala
           </p>
@@ -405,13 +405,13 @@ function Index() {
 
       {/* CTA final */}
       <section className="py-32 sm:py-40 lg:py-56">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+        <div className="max-w-[1200px] mx-auto px-6 text-left lg:text-center">
           <h2 className="text-4xl sm:text-6xl lg:text-[88px] font-semibold tracking-[-0.045em] leading-[1.02] mb-10">
             Pronto para a próxima fase
             <br />
             <span className="text-primary">da sua cooperativa?</span>
           </h2>
-          <p className="text-lg sm:text-xl text-foreground/60 leading-[1.4] mb-12 max-w-xl mx-auto">
+          <p className="text-lg sm:text-xl text-foreground/60 leading-[1.4] mb-12 max-w-xl lg:mx-auto">
             Vamos conversar sobre o seu momento e construir, juntos, o plano
             certo para o seu crescimento.
           </p>
