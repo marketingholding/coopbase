@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/coopbase-logo.svg";
 import logoWhite from "@/assets/coopbase-logo-white.svg";
 import diagDiagnostico from "@/assets/diagram-diagnostico.png";
@@ -251,6 +253,16 @@ function NarrativePanel({ panel, index }: { panel: Panel; index: number }) {
 function Index() {
   const structuring = panels.slice(0, 3);
   const recurring = panels.slice(3, 6);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -260,18 +272,63 @@ function Index() {
           <a href="#top" className="flex items-center" aria-label="COOPBASE">
             <img src={logo} alt="COOPBASE" className="h-7 w-auto" />
           </a>
-          <nav className="hidden sm:flex items-center gap-10 text-[13px] font-medium tracking-[-0.01em] text-black">
-            <a href="#estruturacao" className="text-white">
+          <nav className="hidden sm:flex items-center gap-10 text-[13px] font-medium tracking-[-0.01em]">
+            <a href="#estruturacao" className="text-white hover:opacity-80 transition-opacity">
               Estruturação
             </a>
-            <a href="#recorrencia" className="text-white">
+            <a href="#recorrencia" className="text-white hover:opacity-80 transition-opacity">
               Recorrência
             </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-black hover:opacity-90 transition-opacity"
+            >
+              Falar agora
+              <span aria-hidden>→</span>
+            </a>
+          </nav>
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            className="sm:hidden inline-flex items-center justify-center h-10 w-10 rounded-full text-white hover:bg-white/10 transition-colors"
+            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        <div
+          id="mobile-menu"
+          className={`sm:hidden overflow-hidden transition-[max-height] duration-300 ease-out ${
+            mobileOpen ? "max-h-96" : "max-h-0"
+          }`}
+        >
+          <nav className="px-6 pt-2 pb-6 flex flex-col gap-1 text-[15px] font-medium text-white">
+            <a
+              href="#estruturacao"
+              onClick={closeMobile}
+              className="py-3 border-b border-white/10"
+            >
+              Estruturação
+            </a>
+            <a
+              href="#recorrencia"
+              onClick={closeMobile}
+              className="py-3 border-b border-white/10"
+            >
+              Recorrência
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobile}
+              className="mt-4 inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-full bg-white text-black"
             >
               Falar agora
               <span aria-hidden>→</span>
