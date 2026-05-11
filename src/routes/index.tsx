@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/coopbase-logo.svg";
 import logoWhite from "@/assets/coopbase-logo-white.svg";
 import diagDiagnostico from "@/assets/diagram-diagnostico.png";
